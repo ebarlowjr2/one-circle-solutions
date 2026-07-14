@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-poppins);
+  --font-mono: var(--font-geist-mono);
+}
+
+@theme {
+  /* One Circle Solutions brand — primary cyan from onecs.net (#00AFF1),
+     purple/magenta from the dotted-C logo gradient. */
+  --color-brand-50: #e6f7fe;
+  --color-brand-100: #c8eefd;
+  --color-brand-300: #7ddafa;
+  --color-brand-400: #38c6f6;
+  --color-brand-500: #00aff1;
+  --color-brand-600: #0090c9;
+  --color-brand-700: #0272a0;
+  --color-brand-purple: #8c4198;
+  --color-brand-magenta: #9c3a6e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-slate-900);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
