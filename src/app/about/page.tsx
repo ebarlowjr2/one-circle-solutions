@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import {
+  ButtonLink,
   CheckItem,
   Container,
   PageHero,
@@ -99,11 +100,21 @@ export default function AboutPage() {
       <section className="bg-white py-20 sm:py-24">
         <Container>
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
-            <SectionHeading
-              eyebrow="The team"
-              title="Senior practitioners, deliberately small"
-              description="We hire experienced analysts and engineers, keep client loads low, and assign a named lead to every engagement. You'll know the people watching your environment by name — and they'll know your environment better than a rotating queue ever could."
-            />
+            <div>
+              <SectionHeading
+                eyebrow="The team"
+                title="Senior practitioners, deliberately small"
+                description="We hire experienced analysts and engineers, keep client loads low, and assign a named lead to every engagement. You'll know the people watching your environment by name — and they'll know your environment better than a rotating queue ever could."
+              />
+              <div className="mt-8 flex flex-wrap gap-4">
+                <ButtonLink href="/about/leadership" variant="dark">
+                  Meet the leadership
+                </ButtonLink>
+                <ButtonLink href="/about/certifications" variant="outline">
+                  Team certifications
+                </ButtonLink>
+              </div>
+            </div>
             <div className="grid grid-cols-2 gap-6 self-start">
               {[
                 ["100%", "engagements with a named lead"],
