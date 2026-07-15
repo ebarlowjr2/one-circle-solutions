@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
-import { certificationGroups } from "@/content/certifications";
+import {
+  certificationGroups,
+  certificationStats,
+} from "@/content/certifications";
 import { ButtonLink, Container, PageHero } from "@/components/ui/primitives";
 import { CtaSection } from "@/components/sections/cta";
 
@@ -17,6 +20,27 @@ export default function CertificationsPage() {
         title="Credentials that stay sharp in production"
         description="Certifications don't run a SOC — people do. But they're a fair signal of the discipline behind the work. Here's how the team is credentialed across the areas we operate in every day."
       />
+
+      <section className="border-b border-slate-200 bg-white">
+        <Container className="py-12">
+          <dl className="grid grid-cols-3 gap-6">
+            {[
+              [`${certificationStats.certifications}+`, "distinct certifications across the bench"],
+              [String(certificationStats.disciplines), "disciplines, from audit to offensive security"],
+              [`${certificationStats.issuers}`, "certifying bodies, including AWS, Microsoft & Oracle"],
+            ].map(([value, label]) => (
+              <div key={label}>
+                <dd className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+                  {value}
+                </dd>
+                <dt className="mt-2 text-sm leading-snug text-slate-500">
+                  {label}
+                </dt>
+              </div>
+            ))}
+          </dl>
+        </Container>
+      </section>
 
       <section className="bg-white py-20 sm:py-24">
         <Container>
