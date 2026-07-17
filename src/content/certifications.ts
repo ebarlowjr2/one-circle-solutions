@@ -20,6 +20,7 @@ export const certificationGroups: CertGroup[] = [
       { abbr: "CISA", name: "Certified Information Systems Auditor", issuer: "ISACA" },
       { abbr: "CRISC", name: "Certified in Risk and Information Systems Control", issuer: "ISACA" },
       { abbr: "ISO 27001 LA", name: "ISO/IEC 27001 Lead Auditor", issuer: "PECB" },
+      { abbr: "PCI ISA", name: "PCI Internal Security Assessor", issuer: "PCI SSC" },
       { abbr: "SecurityX", name: "CompTIA SecurityX (formerly CASP+)", issuer: "CompTIA" },
     ],
   },
@@ -67,7 +68,9 @@ export const certificationGroups: CertGroup[] = [
     description:
       "The systems and network depth that managed security is built on.",
     certs: [
+      { abbr: "CCNP Security", name: "Cisco Certified Network Professional – Security", issuer: "Cisco" },
       { abbr: "CCNA", name: "Cisco Certified Network Associate", issuer: "Cisco" },
+      { abbr: "VCP", name: "VMware Certified Professional", issuer: "VMware (Broadcom)" },
       { abbr: "NSE 4", name: "Fortinet Network Security Professional", issuer: "Fortinet" },
       { abbr: "Network+", name: "CompTIA Network+", issuer: "CompTIA" },
       { abbr: "A+", name: "CompTIA A+", issuer: "CompTIA" },

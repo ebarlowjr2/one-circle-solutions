@@ -3,6 +3,35 @@
 
 import type { IconName } from "@/components/ui/icons";
 
+export const leadershipOverview = [
+  "One Circle Solutions is led by practitioners with backgrounds spanning security operations, IT infrastructure, and business leadership. Leadership here is not a title layer — it defines the standards every engagement runs on, oversees service delivery directly, and stays personally engaged in complex environments and key client relationships.",
+  "That involvement is structural, not ceremonial: every escalation path on this site ends at a leader who has run the work themselves.",
+];
+
+export const teamOverview = [
+  "Behind leadership sits a bench of certified engineers, security analysts, and IT professionals with real production experience — people who have carried pagers, not just projects.",
+  "The team works inside one structured operating model rather than as isolated technical resources, so every environment we touch is managed consistently, to the same documented standards. Continuous training and certification are budgeted, scheduled, and expected — not left to personal initiative.",
+];
+
+export const operatingPractices = [
+  "Clearly defined roles and responsibility boundaries on every engagement",
+  "Standardized configurations and documented operating procedures",
+  "Structured escalation and incident handling with defined SLAs",
+  "Continuous monitoring, logging, and oversight of every managed environment",
+  "Accountability for outcomes, not just activity",
+];
+
+export const culture = {
+  intro:
+    "The culture is built around execution, accountability, and continuous improvement — which shows up in how the team:",
+  points: [
+    "Maintains the same standards across every client environment",
+    "Takes ownership of issues through to outcomes",
+    "Backs each other up so coverage never depends on one person",
+    "Invests in ongoing training, certification, and capability development",
+  ],
+};
+
 export type LeadershipRole = {
   role: string;
   focus: string;
