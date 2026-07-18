@@ -27,8 +27,8 @@ export function ServicesGrid({
               href={`/services/${service.slug}`}
               className="group flex flex-col rounded-xl border border-slate-200 bg-white p-7 transition-all hover:border-brand-500 hover:shadow-md"
             >
-              <span className="inline-flex w-fit rounded-lg bg-slate-950 p-2.5">
-                <Icon name={service.icon} className="h-5.5 w-5.5 text-brand-400" />
+              <span className="inline-flex w-fit rounded-lg bg-gradient-to-br from-brand-500 to-brand-purple p-2.5">
+                <Icon name={service.icon} className="h-5.5 w-5.5 text-white" />
               </span>
               <h3 className="mt-5 text-base font-semibold text-slate-900">
                 {service.name}

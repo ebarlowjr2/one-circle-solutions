@@ -9,17 +9,17 @@ export function CtaSection({
   description?: string;
 }) {
   return (
-    <section className="bg-slate-950 py-20 sm:py-24">
+    <section className="bg-gradient-to-br from-brand-700 via-brand-blue to-brand-purple py-20 sm:py-24">
       <Container>
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-semibold tracking-tight text-balance text-white sm:text-4xl">
             {title}
           </h2>
-          <p className="mt-5 text-lg leading-relaxed text-slate-300">
+          <p className="mt-5 text-lg leading-relaxed text-white/90">
             {description}
           </p>
           <div className="mt-9 flex flex-wrap justify-center gap-4">
-            <ButtonLink href={site.cta.primary.href}>
+            <ButtonLink href={site.cta.primary.href} variant="light">
               {site.cta.primary.label}
             </ButtonLink>
             <ButtonLink href="/services" variant="outlineDark">

@@ -13,7 +13,7 @@ const interests = [
 ];
 
 const inputStyles =
-  "w-full rounded-md border border-slate-700 bg-slate-950/60 px-3.5 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-brand-500 focus:outline-none";
+  "w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-brand-500 focus:outline-none";
 
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
@@ -42,10 +42,10 @@ export function ContactForm() {
   if (status === "sent") {
     return (
       <div className="py-10 text-center">
-        <p className="text-lg font-semibold text-white">
+        <p className="text-lg font-semibold text-slate-900">
           Thanks — we&apos;ve got it.
         </p>
-        <p className="mt-2 text-sm text-slate-400">
+        <p className="mt-2 text-sm text-slate-500">
           A practitioner will reply within one business day.
         </p>
       </div>
@@ -56,13 +56,13 @@ export function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-5">
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-slate-200">
+          <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-slate-700">
             Name
           </label>
           <input id="name" name="name" required autoComplete="name" className={inputStyles} />
         </div>
         <div>
-          <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-slate-200">
+          <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-slate-700">
             Work email
           </label>
           <input id="email" name="email" type="email" required autoComplete="email" className={inputStyles} />
@@ -70,13 +70,13 @@ export function ContactForm() {
       </div>
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="company" className="mb-1.5 block text-sm font-medium text-slate-200">
+          <label htmlFor="company" className="mb-1.5 block text-sm font-medium text-slate-700">
             Company
           </label>
           <input id="company" name="company" required autoComplete="organization" className={inputStyles} />
         </div>
         <div>
-          <label htmlFor="interest" className="mb-1.5 block text-sm font-medium text-slate-200">
+          <label htmlFor="interest" className="mb-1.5 block text-sm font-medium text-slate-700">
             What&apos;s on your mind?
           </label>
           <select id="interest" name="interest" className={inputStyles} defaultValue="Not sure yet">
@@ -89,7 +89,7 @@ export function ContactForm() {
         </div>
       </div>
       <div>
-        <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-slate-200">
+        <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-slate-700">
           Tell us about your situation
         </label>
         <textarea
@@ -109,11 +109,11 @@ export function ContactForm() {
         {status === "sending" ? "Sending…" : "Request a consultation"}
       </button>
       {status === "error" ? (
-        <p className="text-sm text-red-400">
+        <p className="text-sm text-red-600">
           Something went wrong. Please try again or email us directly.
         </p>
       ) : null}
-      <p className="text-xs leading-relaxed text-slate-500">
+      <p className="text-xs leading-relaxed text-slate-400">
         We use what you share here only to respond to your inquiry. No lists,
         no sequences.
       </p>

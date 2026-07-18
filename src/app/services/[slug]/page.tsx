@@ -44,38 +44,36 @@ export default async function ServicePage({
   return (
     <>
       {/* Service hero */}
-      <section className="bg-slate-950 py-20 sm:py-24">
+      <section className="border-b border-slate-200 bg-gradient-to-b from-brand-50 to-white py-20 sm:py-24">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr]">
             <div>
-              <Eyebrow tone="dark">Service</Eyebrow>
-              <h1 className="mt-3 text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">
+              <Eyebrow>Service</Eyebrow>
+              <h1 className="mt-3 text-4xl font-semibold tracking-tight text-balance text-slate-900 sm:text-5xl">
                 {service.name}
               </h1>
-              <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-300">
+              <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-600">
                 {service.summary}
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <ButtonLink href="/contact">Discuss this service</ButtonLink>
-                <ButtonLink href="/services" variant="outlineDark">
+                <ButtonLink href="/services" variant="outline">
                   All services
                 </ButtonLink>
               </div>
             </div>
-            <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-7 lg:self-start">
+            <div className="rounded-xl border border-slate-200 bg-white p-7 shadow-sm lg:self-start">
               <div className="flex items-center gap-3">
-                <span className="inline-flex rounded-lg bg-slate-950 p-2.5">
-                  <Icon name={service.icon} className="h-6 w-6 text-brand-400" />
+                <span className="inline-flex rounded-lg bg-gradient-to-br from-brand-500 to-brand-purple p-2.5">
+                  <Icon name={service.icon} className="h-6 w-6 text-white" />
                 </span>
-                <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-300">
+                <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-500">
                   What you get
                 </h2>
               </div>
               <ul className="mt-5 space-y-3.5">
                 {service.deliverables.map((item) => (
-                  <CheckItem key={item} tone="dark">
-                    {item}
-                  </CheckItem>
+                  <CheckItem key={item}>{item}</CheckItem>
                 ))}
               </ul>
             </div>

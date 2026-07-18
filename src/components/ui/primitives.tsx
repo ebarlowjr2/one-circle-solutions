@@ -19,11 +19,13 @@ export function Container({
 const buttonStyles = {
   primary:
     "bg-brand-500 text-slate-950 hover:bg-brand-400 focus-visible:outline-brand-500",
-  dark: "bg-slate-900 text-white hover:bg-slate-700 focus-visible:outline-slate-900",
+  dark: "bg-brand-700 text-white hover:bg-brand-600 focus-visible:outline-brand-700",
+  light:
+    "bg-white text-brand-700 shadow-sm hover:bg-brand-50 focus-visible:outline-white",
   outline:
     "border border-slate-300 text-slate-800 hover:border-slate-500 hover:bg-slate-50 focus-visible:outline-slate-500",
   outlineDark:
-    "border border-slate-600 text-slate-100 hover:border-slate-300 hover:bg-white/5 focus-visible:outline-slate-300",
+    "border border-white/50 text-white hover:border-white hover:bg-white/10 focus-visible:outline-white",
 } as const;
 
 export function ButtonLink({
@@ -57,7 +59,7 @@ export function Eyebrow({
   return (
     <p
       className={`text-xs font-semibold uppercase tracking-[0.18em] ${
-        tone === "dark" ? "text-brand-400" : "text-brand-700"
+        tone === "dark" ? "text-white/80" : "text-brand-700"
       }`}
     >
       {children}
@@ -93,7 +95,7 @@ export function SectionHeading({
       {description ? (
         <p
           className={`mt-4 text-lg leading-relaxed ${
-            tone === "dark" ? "text-slate-300" : "text-slate-600"
+            tone === "dark" ? "text-white/90" : "text-slate-600"
           }`}
         >
           {description}
@@ -114,10 +116,12 @@ export function CheckItem({
     <li className="flex items-start gap-3">
       <Icon
         name="check"
-        className="mt-0.5 h-5 w-5 shrink-0 text-brand-500"
+        className={`mt-0.5 h-5 w-5 shrink-0 ${
+          tone === "dark" ? "text-white" : "text-brand-500"
+        }`}
       />
       <span
-        className={tone === "dark" ? "text-slate-300" : "text-slate-600"}
+        className={tone === "dark" ? "text-white/90" : "text-slate-600"}
       >
         {children}
       </span>
@@ -137,14 +141,14 @@ export function PageHero({
   children?: ReactNode;
 }) {
   return (
-    <section className="bg-slate-950 py-20 sm:py-24">
+    <section className="border-b border-slate-200 bg-gradient-to-b from-brand-50 to-white py-20 sm:py-24">
       <Container>
         <div className="max-w-3xl">
-          <Eyebrow tone="dark">{eyebrow}</Eyebrow>
-          <h1 className="mt-3 text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">
+          <Eyebrow>{eyebrow}</Eyebrow>
+          <h1 className="mt-3 text-4xl font-semibold tracking-tight text-balance text-slate-900 sm:text-5xl">
             {title}
           </h1>
-          <p className="mt-5 text-lg leading-relaxed text-slate-300">
+          <p className="mt-5 text-lg leading-relaxed text-slate-600">
             {description}
           </p>
           {children}

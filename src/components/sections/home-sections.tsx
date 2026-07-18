@@ -92,7 +92,7 @@ export function Outcomes() {
 
 export function OperatingModel() {
   return (
-    <section className="bg-slate-950 py-20 sm:py-24">
+    <section className="bg-gradient-to-br from-brand-700 via-brand-blue to-brand-purple py-20 sm:py-24">
       <Container>
         <SectionHeading
           eyebrow="How we operate"
@@ -100,16 +100,16 @@ export function OperatingModel() {
           description={operatingModel.description}
           tone="dark"
         />
-        <div className="mt-14 grid gap-px overflow-hidden rounded-xl border border-slate-800 bg-slate-800 sm:grid-cols-2">
+        <div className="mt-14 grid gap-px overflow-hidden rounded-xl border border-white/20 bg-white/20 sm:grid-cols-2">
           {operatingModel.pillars.map((pillar, i) => (
-            <div key={pillar.title} className="bg-slate-950 p-8">
-              <span className="text-sm font-semibold text-brand-400">
+            <div key={pillar.title} className="bg-white/10 p-8 backdrop-blur-sm">
+              <span className="text-sm font-semibold text-white/70">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <h3 className="mt-3 text-lg font-semibold text-white">
                 {pillar.title}
               </h3>
-              <p className="mt-2.5 text-sm leading-relaxed text-slate-400">
+              <p className="mt-2.5 text-sm leading-relaxed text-white/85">
                 {pillar.description}
               </p>
             </div>

@@ -75,20 +75,20 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-slate-950 py-20 sm:py-24">
+      <section className="bg-gradient-to-br from-brand-700 via-brand-blue to-brand-purple py-20 sm:py-24">
         <Container>
           <SectionHeading
             eyebrow="What we believe"
             title="The principles we're willing to lose deals over"
             tone="dark"
           />
-          <div className="mt-14 grid gap-px overflow-hidden rounded-xl border border-slate-800 bg-slate-800 sm:grid-cols-2">
+          <div className="mt-14 grid gap-px overflow-hidden rounded-xl border border-white/20 bg-white/20 sm:grid-cols-2">
             {values.map((value) => (
-              <div key={value.title} className="bg-slate-950 p-8">
+              <div key={value.title} className="bg-white/10 p-8 backdrop-blur-sm">
                 <h3 className="text-lg font-semibold text-white">
                   {value.title}
                 </h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-slate-400">
+                <p className="mt-2.5 text-sm leading-relaxed text-white/85">
                   {value.description}
                 </p>
               </div>

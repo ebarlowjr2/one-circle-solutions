@@ -153,7 +153,7 @@ export default function LeadershipPage() {
       </section>
 
       {/* How the team operates */}
-      <section className="bg-slate-950 py-20 sm:py-24">
+      <section className="bg-gradient-to-br from-brand-700 via-brand-blue to-brand-purple py-20 sm:py-24">
         <Container>
           <SectionHeading
             eyebrow="How the team operates"
@@ -161,13 +161,13 @@ export default function LeadershipPage() {
             description="Consistency is a control. The team runs every environment through the same disciplines, so quality never depends on which analyst picks up the ticket."
             tone="dark"
           />
-          <ol className="mt-14 grid gap-px overflow-hidden rounded-xl border border-slate-800 bg-slate-800 sm:grid-cols-2 lg:grid-cols-5">
+          <ol className="mt-14 grid gap-px overflow-hidden rounded-xl border border-white/20 bg-white/20 sm:grid-cols-2 lg:grid-cols-5">
             {operatingPractices.map((practice, i) => (
-              <li key={practice} className="bg-slate-950 p-7">
-                <span className="text-2xl font-semibold text-brand-400">
+              <li key={practice} className="bg-white/10 p-7 backdrop-blur-sm">
+                <span className="text-2xl font-semibold text-white/80">
                   {i + 1}
                 </span>
-                <p className="mt-3 text-sm leading-relaxed text-slate-300">
+                <p className="mt-3 text-sm leading-relaxed text-white/90">
                   {practice}
                 </p>
               </li>
