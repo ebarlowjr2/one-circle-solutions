@@ -43,6 +43,8 @@ src/
 
 **Editing content:** nearly all copy lives in `src/content/`. Adding a service to `services.ts` automatically creates its detail page, grid card, and footer link.
 
+**Publishing a downloadable tool:** drop the file in `public/downloads/` and add an entry to `src/content/downloads.ts`. Size and SHA-256 checksum are computed from the real file at build time and shown on the Resources page.
+
 ## Before launch (TODOs)
 
 - **Stats** in `src/content/home.ts` are placeholders — replace with real operational metrics.
