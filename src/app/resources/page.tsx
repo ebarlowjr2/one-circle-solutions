@@ -1,14 +1,17 @@
-import type { Metadata } from "next";
-import { resources } from "@/content/resources";
+import Link from "next/link";
+import { articles } from "@/content/articles";
+import { breadcrumbSchema, JsonLd, pageMetadata } from "@/lib/seo";
 import { Container, PageHero, SectionHeading } from "@/components/ui/primitives";
 import { CtaSection } from "@/components/sections/cta";
 import { DownloadsSection } from "@/components/sections/downloads";
+import { Icon } from "@/components/ui/icons";
 
-export const metadata: Metadata = {
-  title: "Resources",
+export const metadata = pageMetadata({
+  title: "Cybersecurity Resources",
   description:
-    "Free security scripts, hardening baselines, and templates — plus practical guides on managed security and compliance readiness, written by practitioners.",
-};
+    "Free security scripts, hardening baselines, and templates — plus practical guides on managed security, compliance readiness, and security operations, written by practitioners.",
+  path: "/resources",
+});
 
 const typeStyles: Record<string, string> = {
   Guide: "bg-brand-50 text-brand-700",
@@ -19,6 +22,12 @@ const typeStyles: Record<string, string> = {
 export default function ResourcesPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Resources", path: "/resources" },
+        ])}
+      />
       <PageHero
         eyebrow="Resources"
         title="Tools and writing from the bench"
@@ -34,16 +43,17 @@ export default function ResourcesPage() {
             title="Guides, checklists, and briefings"
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {resources.map((item) => (
-              <article
+            {articles.map((item) => (
+              <Link
                 key={item.slug}
-                className="flex flex-col rounded-xl border border-slate-200 p-7 transition-colors hover:border-brand-500"
+                href={`/resources/${item.slug}`}
+                className="group flex flex-col rounded-xl border border-slate-200 p-7 transition-colors hover:border-brand-500"
               >
                 <div className="flex items-center justify-between">
                   <span
-                    className={`rounded-full px-2.5 py-1 text-xs font-semibold ${typeStyles[item.type]}`}
+                    className={`rounded-full px-2.5 py-1 text-xs font-semibold ${typeStyles[item.category]}`}
                   >
-                    {item.type}
+                    {item.category}
                   </span>
                   <span className="text-xs text-slate-400">{item.readTime}</span>
                 </div>
@@ -53,10 +63,14 @@ export default function ResourcesPage() {
                 <p className="mt-2.5 flex-1 text-sm leading-relaxed text-slate-600">
                   {item.description}
                 </p>
-                <p className="mt-5 text-sm font-semibold text-slate-400">
-                  Coming soon
-                </p>
-              </article>
+                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700">
+                  Read article
+                  <Icon
+                    name="arrow-right"
+                    className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                  />
+                </span>
+              </Link>
             ))}
           </div>
         </Container>

@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import { breadcrumbSchema, JsonLd, pageMetadata } from "@/lib/seo";
 import {
   culture,
   leadership,
@@ -18,11 +18,12 @@ import {
 } from "@/components/ui/primitives";
 import { CtaSection } from "@/components/sections/cta";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Leadership & Team",
   description:
     "How One Circle Solutions is led and how the team operates — experienced leadership, a structured operating model, and a certified bench accountable for outcomes.",
-};
+  path: "/about/leadership",
+});
 
 const certIssuers = [
   ...new Set(certificationGroups.flatMap((g) => g.certs.map((c) => c.issuer))),
@@ -31,6 +32,13 @@ const certIssuers = [
 export default function LeadershipPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "About", path: "/about" },
+          { name: "Leadership & Team", path: "/about/leadership" },
+        ])}
+      />
       <PageHero
         eyebrow="Leadership & Team"
         title="Led by operators, not account managers"

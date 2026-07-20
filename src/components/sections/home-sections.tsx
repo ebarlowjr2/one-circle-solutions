@@ -198,9 +198,14 @@ export function TrustSection() {
               title="We hold ourselves to the standard we help you meet"
               description="An MSSP holds privileged access to your environment. That should make you demanding. Here's how we operate — and you can read the full picture on our Trust page."
             />
-            <ButtonLink href="/trust" variant="outline" className="mt-8">
-              Read our trust & compliance posture
-            </ButtonLink>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <ButtonLink href="/trust" variant="outline">
+                Read our trust &amp; compliance posture
+              </ButtonLink>
+              <ButtonLink href="/resources" variant="outline">
+                Free tools &amp; resources
+              </ButtonLink>
+            </div>
           </div>
           <ul className="space-y-6">
             {trustHighlights.map((item) => (

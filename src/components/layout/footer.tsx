@@ -68,11 +68,24 @@ export function Footer() {
           </nav>
         </div>
 
-        <div className="mt-12 flex flex-col gap-2 border-t border-slate-200 pt-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 flex flex-col gap-3 border-t border-slate-200 pt-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} {site.legalName}. All rights reserved.
           </p>
-          <p>Security operations, run in the open.</p>
+          <ul className="flex flex-wrap items-center gap-x-5 gap-y-1">
+            {footerNav.legal.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className="hover:text-slate-900">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <a href="/sitemap.xml" className="hover:text-slate-900">
+                Sitemap
+              </a>
+            </li>
+          </ul>
         </div>
       </Container>
     </footer>

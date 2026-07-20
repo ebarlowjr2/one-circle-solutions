@@ -1,5 +1,6 @@
-import type { Metadata } from "next";
+import { breadcrumbSchema, JsonLd, pageMetadata } from "@/lib/seo";
 import {
+  ButtonLink,
   CheckItem,
   Container,
   PageHero,
@@ -8,11 +9,12 @@ import {
 import { Icon } from "@/components/ui/icons";
 import { CtaSection } from "@/components/sections/cta";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Trust & Compliance",
   description:
     "How One Circle Solutions handles access, data, and its own security posture — and the compliance frameworks our services map to.",
-};
+  path: "/trust",
+});
 
 const frameworks = [
   {
@@ -68,6 +70,12 @@ const internalPosture = [
 export default function TrustPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Trust & Compliance", path: "/trust" },
+        ])}
+      />
       <PageHero
         eyebrow="Trust & Compliance"
         title="Demanding vendors is good security. Start with us."
@@ -96,6 +104,11 @@ export default function TrustPage() {
                 </p>
               </div>
             ))}
+          </div>
+          <div className="mt-10">
+            <ButtonLink href="/about/certifications" variant="outline">
+              See the team certifications behind this work
+            </ButtonLink>
           </div>
         </Container>
       </section>

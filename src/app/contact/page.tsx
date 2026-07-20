@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import { site } from "@/content/site";
+import { pageMetadata } from "@/lib/seo";
 import {
   CheckItem,
   Container,
@@ -7,11 +7,13 @@ import {
 } from "@/components/ui/primitives";
 import { ContactForm } from "@/components/contact-form";
 
-export const metadata: Metadata = {
-  title: "Contact",
+export const metadata = pageMetadata({
+  title: "Contact One Circle Solutions",
   description:
     "Book a security consultation with One Circle Solutions. Every conversation ends with a written findings brief — no obligation.",
-};
+  path: "/contact",
+  absoluteTitle: true,
+});
 
 const expectations = [
   "A reply from a practitioner (not a sales sequence) within one business day",

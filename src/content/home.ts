@@ -106,8 +106,8 @@ export const buyerPaths = [
     title: "We have a compliance deadline",
     description:
       "SOC 2, HIPAA, PCI DSS, or CMMC is standing between you and a signed deal, and the gap list keeps growing.",
-    href: "/services/vciso-compliance",
-    linkLabel: "Start with vCISO & Compliance",
+    href: "/services/compliance",
+    linkLabel: "Start with Compliance & Audit Readiness",
   },
   {
     title: "We just had an incident",

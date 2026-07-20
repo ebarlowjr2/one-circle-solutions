@@ -32,6 +32,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
+                aria-current={active ? "page" : undefined}
                 className={`text-sm transition-colors ${
                   active
                     ? "font-semibold text-slate-900"

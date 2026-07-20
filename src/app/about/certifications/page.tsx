@@ -1,20 +1,28 @@
-import type { Metadata } from "next";
 import {
   certificationGroups,
   certificationStats,
 } from "@/content/certifications";
+import { breadcrumbSchema, JsonLd, pageMetadata } from "@/lib/seo";
 import { ButtonLink, Container, PageHero } from "@/components/ui/primitives";
 import { CtaSection } from "@/components/sections/cta";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Certifications",
   description:
     "The industry certifications held across the One Circle Solutions team — security leadership, operations, offensive security, cloud, and infrastructure.",
-};
+  path: "/about/certifications",
+});
 
 export default function CertificationsPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "About", path: "/about" },
+          { name: "Certifications", path: "/about/certifications" },
+        ])}
+      />
       <PageHero
         eyebrow="Team certifications"
         title="Credentials that stay sharp in production"

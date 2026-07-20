@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getService, services } from "@/content/services";
+import { breadcrumbSchema, JsonLd, pageMetadata } from "@/lib/seo";
 import { Icon } from "@/components/ui/icons";
 import {
   ButtonLink,
@@ -24,10 +25,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const service = getService(slug);
   if (!service) return {};
-  return {
+  return pageMetadata({
     title: service.name,
     description: service.tagline,
-  };
+    path: `/services/${service.slug}`,
+  });
 }
 
 export default async function ServicePage({
@@ -43,6 +45,13 @@ export default async function ServicePage({
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services" },
+          { name: service.name, path: `/services/${service.slug}` },
+        ])}
+      />
       {/* Service hero */}
       <section className="border-b border-slate-200 bg-gradient-to-b from-brand-50 to-white py-20 sm:py-24">
         <Container>
@@ -158,6 +167,17 @@ export default async function ServicePage({
               </Link>
             ))}
           </div>
+          <p className="mt-8 text-sm text-slate-600">
+            Wondering how we handle access and data as your provider? Read our{" "}
+            <Link href="/trust" className="font-semibold text-brand-700 hover:text-brand-500">
+              Trust &amp; Compliance posture
+            </Link>
+            , or grab free scripts and guides from{" "}
+            <Link href="/resources" className="font-semibold text-brand-700 hover:text-brand-500">
+              Resources
+            </Link>
+            .
+          </p>
         </Container>
       </section>
 

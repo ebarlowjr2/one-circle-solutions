@@ -8,7 +8,8 @@ const interests = [
   "Vulnerability Management",
   "Cloud Security",
   "Incident Response & Readiness",
-  "vCISO & Compliance",
+  "vCISO / Security Leadership",
+  "Compliance & Audit Readiness",
   "Not sure yet",
 ];
 

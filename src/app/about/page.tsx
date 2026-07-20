@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { breadcrumbSchema, JsonLd, pageMetadata } from "@/lib/seo";
 import {
   ButtonLink,
   CheckItem,
@@ -8,11 +8,12 @@ import {
 } from "@/components/ui/primitives";
 import { CtaSection } from "@/components/sections/cta";
 
-export const metadata: Metadata = {
-  title: "About",
+export const metadata = pageMetadata({
+  title: "About Us",
   description:
     "One Circle Solutions is a managed security services provider built by operators — senior analysts and engineers who run security as a craft, not a call center.",
-};
+  path: "/about",
+});
 
 const values = [
   {
@@ -47,6 +48,12 @@ const whoWeServe = [
 export default function AboutPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "About", path: "/about" },
+        ])}
+      />
       <PageHero
         eyebrow="About us"
         title="Built by operators who got tired of watching MSSPs disappoint"

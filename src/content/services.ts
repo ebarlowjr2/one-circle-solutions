@@ -250,50 +250,97 @@ export const services: Service[] = [
     ],
   },
   {
-    slug: "vciso-compliance",
-    name: "vCISO & Compliance Advisory",
-    shortName: "vCISO & Compliance",
+    slug: "vciso",
+    name: "vCISO Services",
+    shortName: "vCISO",
     icon: "compass",
-    tagline: "Security leadership and audit readiness without the executive hire.",
+    tagline: "Executive security leadership, roadmaps, and governance without the full-time hire.",
     summary:
-      "Frameworks don't secure companies — programs do. Our virtual CISO service gives you an experienced security leader who builds your roadmap, owns your risk register, and gets you through SOC 2, HIPAA, PCI DSS, or CMMC without derailing the business.",
+      "Most growing companies need executive security judgment long before they can justify a full-time CISO. Our virtual CISO service gives you an experienced security leader who sets the roadmap, owns the risk register, briefs your board, and matures your program quarter over quarter.",
     outcomes: [
       "A security roadmap tied to business risk, not checkbox anxiety",
-      "Audit readiness with evidence collection built into operations",
-      "A named security leader for customers, auditors, and your board",
-      "Policies people can follow instead of binders nobody reads",
+      "A maintained risk register with owners and real decisions",
+      "A named security leader for customers, partners, and your board",
+      "Program maturity you can measure and show quarter over quarter",
     ],
     capabilities: [
       {
-        title: "Program leadership",
+        title: "Security strategy & roadmap",
         description:
-          "Fractional CISO ownership of strategy, budget guidance, risk register, and board reporting.",
+          "A prioritized, budget-aware program roadmap with quarterly milestones — reviewed and re-planned as the business changes.",
       },
       {
-        title: "Framework readiness",
+        title: "Risk management & governance",
         description:
-          "Gap assessment and remediation roadmaps for SOC 2, ISO 27001, HIPAA, PCI DSS, and CMMC.",
+          "Risk register ownership, security steering cadence, and policy governance that fits how your company actually works.",
       },
       {
-        title: "Policy & process",
+        title: "Executive & board reporting",
         description:
-          "Right-sized policies mapped to controls, with ownership and review cycles that stick.",
+          "Clear reporting on posture, incidents, and program progress in language your leadership and board can act on.",
       },
       {
         title: "Vendor & customer diligence",
         description:
-          "Security questionnaire responses, vendor risk reviews, and customer audit support.",
+          "Security questionnaire responses, vendor risk reviews, and a named security leader for customer conversations.",
       },
     ],
     goodFit: [
-      "A big customer just sent a 300-question security review",
-      "You need SOC 2 to close deals but don't know where to start",
       "You need executive-level security judgment a few days a month",
+      "Security decisions keep stalling because nobody owns them",
+      "Customers and your board are asking who leads security",
     ],
     deliverables: [
       "Security program roadmap with quarterly milestones",
-      "Maintained policy set and risk register",
-      "Audit and customer-diligence support",
+      "Maintained risk register and governance cadence",
+      "Executive and board-level reporting",
+    ],
+  },
+  {
+    slug: "compliance",
+    name: "Compliance & Audit Readiness",
+    shortName: "Compliance",
+    icon: "shield",
+    tagline: "SOC 2, HIPAA, PCI DSS, and CMMC readiness with evidence built into operations.",
+    summary:
+      "Frameworks don't secure companies — but failing an audit can stall one. We get you ready for SOC 2, HIPAA, PCI DSS, and CMMC with gap assessments, right-sized policies, and evidence collection built into daily operations instead of a pre-audit scramble.",
+    outcomes: [
+      "A gap assessment that tells you exactly what stands between you and the audit",
+      "Audit evidence generated as a byproduct of operations, not a quarterly scramble",
+      "Policies people can follow instead of binders nobody reads",
+      "Alignment to NIST CSF and CIS Controls where no framework is mandated",
+    ],
+    capabilities: [
+      {
+        title: "Framework gap assessment",
+        description:
+          "Current-state review against SOC 2, ISO 27001, HIPAA, PCI DSS, or CMMC with a prioritized remediation roadmap.",
+      },
+      {
+        title: "Policy & control implementation",
+        description:
+          "Right-sized policies mapped to controls, with ownership and review cycles that survive past the audit.",
+      },
+      {
+        title: "Evidence & documentation support",
+        description:
+          "Evidence collection wired into daily operations, organized the way auditors ask for it.",
+      },
+      {
+        title: "Audit & assessor support",
+        description:
+          "Preparation for the audit window, direct support during fieldwork, and remediation planning for findings.",
+      },
+    ],
+    goodFit: [
+      "You need SOC 2 to close deals but don't know where to start",
+      "A big customer just sent a 300-question security review",
+      "An audit deadline is fixed and the gap list keeps growing",
+    ],
+    deliverables: [
+      "Framework gap assessment with remediation roadmap",
+      "Maintained policy set mapped to controls",
+      "Audit-ready evidence and assessor support",
     ],
   },
 ];
