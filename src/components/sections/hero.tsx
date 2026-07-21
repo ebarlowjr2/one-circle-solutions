@@ -2,10 +2,25 @@ import { site } from "@/content/site";
 import { ButtonLink, Container, Eyebrow } from "@/components/ui/primitives";
 import { Icon } from "@/components/ui/icons";
 
+// Illustrative SOC activity — modeled on real anonymized alerts.
+// Customer names and full hostnames are scrubbed; source IP is masked.
 const heroSignals = [
-  { label: "Critical alert · triaged", detail: "Analyst assigned in 4m" },
-  { label: "Suspicious sign-in · contained", detail: "Session revoked, MFA reset" },
-  { label: "Exposed service · remediated", detail: "Ticketed and verified closed" },
+  {
+    label: "Vulnerability cluster · triaged",
+    detail: "95 of 111 findings traced to WKS-ENG-19 — patch plan issued",
+  },
+  {
+    label: "SSH brute-force · blocked",
+    detail: 'Invalid user "usuario" from 151.177.x.x — source blocked at sensor',
+  },
+  {
+    label: "System errors · investigated",
+    detail: "8 repeat events on WKS-ENG-02 — root cause identified",
+  },
+  {
+    label: "Endpoint CVEs · remediated",
+    detail: "Teams / Webex findings on 2 hosts — updates pushed",
+  },
 ];
 
 export function Hero() {

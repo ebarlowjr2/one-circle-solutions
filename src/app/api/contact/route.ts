@@ -7,7 +7,7 @@ import { NextResponse } from "next/server";
 export async function POST(request: Request) {
   let body: Record<string, unknown>;
   try {
-    body = await request.json();
+    body = (await request.json()) as Record<string, unknown>;
   } catch {
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
   }
