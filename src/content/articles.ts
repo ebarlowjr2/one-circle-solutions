@@ -8,7 +8,7 @@ export type Article = {
   slug: string;
   title: string;
   description: string;
-  category: "Guide" | "Checklist" | "Briefing";
+  category: "Guide" | "Checklist" | "Blog";
   datePublished: string;
   dateModified: string;
   readTime: string;
@@ -133,7 +133,7 @@ export const articles: Article[] = [
     title: "You bought EDR. You don't have MDR.",
     description:
       "Why deployed tooling without 24/7 eyes on glass leaves the riskiest hours of the week uncovered, and what closing that gap requires.",
-    category: "Briefing",
+    category: "Blog",
     datePublished: "2026-07-19",
     dateModified: "2026-07-19",
     readTime: "6 min read",
@@ -227,7 +227,7 @@ export const articles: Article[] = [
     title: "The cloud misconfigurations we find in almost every assessment",
     description:
       "Public buckets are the least of it. The identity and network-path findings that show up in nearly every first-time cloud review.",
-    category: "Briefing",
+    category: "Blog",
     datePublished: "2026-07-19",
     dateModified: "2026-07-19",
     readTime: "7 min read",

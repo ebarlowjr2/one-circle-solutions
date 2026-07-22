@@ -20,7 +20,7 @@ const nextConfig: NextConfig = {
         destination: "/services/vulnerability-management",
         statusCode: 301,
       },
-      { source: "/blog", destination: "/resources", statusCode: 301 },
+      { source: "/blog", destination: "/resources/blog", statusCode: 301 },
       { source: "/contact-us", destination: "/contact", statusCode: 301 },
       // TODO: point at /services/managed-it if Managed IT is ever added to
       // the service catalog; today the services index is the best match.

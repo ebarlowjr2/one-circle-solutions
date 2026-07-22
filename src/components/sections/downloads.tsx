@@ -30,16 +30,22 @@ function fileMeta(file: string) {
 
 // Size and checksum are computed from the real files at build time, so the
 // listing can never drift from what's actually served.
-export function DownloadsSection() {
+export function DownloadsSection({
+  showHeading = true,
+}: {
+  showHeading?: boolean;
+}) {
   return (
-    <section className="border-b border-slate-200 bg-slate-50 py-20 sm:py-24">
+    <section className="bg-white py-16 sm:py-20">
       <Container>
-        <SectionHeading
-          eyebrow="Scripts & tools"
-          title="Free tooling from our bench"
-          description="The same baselines and templates we use in engagements, free to download and use. Every file lists its SHA-256 checksum — verify before you run, exactly as you'd expect a security firm to tell you."
-        />
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        {showHeading ? (
+          <SectionHeading
+            eyebrow="Scripts & tools"
+            title="Free tooling from our bench"
+            description="The same baselines and templates we use in engagements, free to download and use. Every file lists its SHA-256 checksum — verify before you run, exactly as you'd expect a security firm to tell you."
+          />
+        ) : null}
+        <div className={`grid gap-6 lg:grid-cols-3 ${showHeading ? "mt-12" : ""}`}>
           {downloads.map((item) => {
             const meta = fileMeta(item.file);
             return (

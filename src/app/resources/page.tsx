@@ -1,23 +1,16 @@
 import Link from "next/link";
-import { articles } from "@/content/articles";
+import { resourceCategories } from "@/content/resources";
 import { breadcrumbSchema, JsonLd, pageMetadata } from "@/lib/seo";
-import { Container, PageHero, SectionHeading } from "@/components/ui/primitives";
+import { Container, PageHero } from "@/components/ui/primitives";
 import { CtaSection } from "@/components/sections/cta";
-import { DownloadsSection } from "@/components/sections/downloads";
 import { Icon } from "@/components/ui/icons";
 
 export const metadata = pageMetadata({
   title: "Cybersecurity Resources",
   description:
-    "Free security scripts, hardening baselines, and templates — plus practical guides on managed security, compliance readiness, and security operations, written by practitioners.",
+    "Free security scripts and tools, practical guides, checklists, and our blog — practitioner writing and tooling on managed security, compliance readiness, and security operations.",
   path: "/resources",
 });
-
-const typeStyles: Record<string, string> = {
-  Guide: "bg-brand-50 text-brand-700",
-  Checklist: "bg-sky-50 text-sky-700",
-  Briefing: "bg-amber-50 text-amber-700",
-};
 
 export default function ResourcesPage() {
   return (
@@ -31,40 +24,34 @@ export default function ResourcesPage() {
       <PageHero
         eyebrow="Resources"
         title="Tools and writing from the bench"
-        description="Free hardening scripts and templates you can use today, plus guides and briefings drawn from real engagements — the questions we get asked most, answered the way we'd answer a client."
+        description="Everything we publish for the security community in one place — free scripts and tools, step-by-step guides, actionable checklists, and our blog. Pick a shelf to start browsing."
       />
-
-      <DownloadsSection />
 
       <section className="bg-white py-20 sm:py-24">
         <Container>
-          <SectionHeading
-            eyebrow="Library"
-            title="Guides, checklists, and briefings"
-          />
-          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {articles.map((item) => (
+          <div className="grid gap-6 sm:grid-cols-2">
+            {resourceCategories.map((category) => (
               <Link
-                key={item.slug}
-                href={`/resources/${item.slug}`}
-                className="group flex flex-col rounded-xl border border-slate-200 p-7 transition-colors hover:border-brand-500"
+                key={category.slug}
+                href={`/resources/${category.slug}`}
+                className="group flex flex-col rounded-xl border border-slate-200 p-8 transition-colors hover:border-brand-500"
               >
                 <div className="flex items-center justify-between">
-                  <span
-                    className={`rounded-full px-2.5 py-1 text-xs font-semibold ${typeStyles[item.category]}`}
-                  >
-                    {item.category}
+                  <span className="inline-flex rounded-lg bg-gradient-to-br from-brand-500 to-brand-purple p-3">
+                    <Icon name={category.icon} className="h-6 w-6 text-white" />
                   </span>
-                  <span className="text-xs text-slate-400">{item.readTime}</span>
+                  <span className="text-xs font-medium text-slate-400">
+                    {category.count} {category.countNoun}
+                  </span>
                 </div>
-                <h2 className="mt-4 text-lg font-semibold leading-snug text-slate-900">
-                  {item.title}
+                <h2 className="mt-5 text-xl font-semibold text-slate-900">
+                  {category.label}
                 </h2>
                 <p className="mt-2.5 flex-1 text-sm leading-relaxed text-slate-600">
-                  {item.description}
+                  {category.description}
                 </p>
-                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700">
-                  Read article
+                <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700">
+                  Browse {category.label}
                   <Icon
                     name="arrow-right"
                     className="h-4 w-4 transition-transform group-hover:translate-x-1"
