@@ -1,9 +1,11 @@
 import { NextResponse } from "next/server";
 
-// Contact form intake stub.
-// TODO: wire to a delivery channel before launch (Resend, SendGrid,
-// a CRM webhook, or Vercel's integrations). Until then submissions are
-// logged to the server console only.
+// Contact form intake. Forwards submissions to the BLOX intake pipeline
+// (n8n webhook -> Zendesk ticket + Telegram ping). Override the endpoint with
+// FORM_WEBHOOK_URL if it ever moves.
+const WEBHOOK =
+  process.env.FORM_WEBHOOK_URL ?? "https://n8n.onecs.net/webhook/site-form";
+
 export async function POST(request: Request) {
   let body: Record<string, unknown>;
   try {
@@ -20,7 +22,26 @@ export async function POST(request: Request) {
     );
   }
 
-  console.log("[contact] submission received:", JSON.stringify(body));
+  // Hand the lead to the intake pipeline. If it fails, tell the visitor rather
+  // than silently losing the submission.
+  try {
+    const res = await fetch(WEBHOOK, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+      signal: AbortSignal.timeout(10000),
+    });
+    if (!res.ok) throw new Error(`intake responded ${res.status}`);
+  } catch (err) {
+    console.error("[contact] intake forward failed:", err);
+    return NextResponse.json(
+      {
+        error:
+          "We couldn't submit your request. Please try again or email info@onecs.net.",
+      },
+      { status: 502 },
+    );
+  }
 
   return NextResponse.json({ ok: true });
 }
