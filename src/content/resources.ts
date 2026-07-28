@@ -1,6 +1,7 @@
 import type { IconName } from "@/components/ui/icons";
 import { articles } from "@/content/articles";
 import { downloads } from "@/content/downloads";
+import { longGuides } from "@/content/guides";
 
 // Badge colors for article types, shared across resource listing pages.
 export const articleTypeStyles: Record<string, string> = {
@@ -19,7 +20,8 @@ export type ResourceCategory = {
 };
 
 const countByType = (type: string) =>
-  articles.filter((a) => a.category === type).length;
+  articles.filter((a) => a.category === type).length +
+  longGuides.filter((g) => g.category === type).length;
 
 // The four cards on the Resources hub. Counts are derived from content so
 // they can never drift from what's actually published.

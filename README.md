@@ -45,6 +45,8 @@ src/
 
 **Publishing a downloadable tool:** drop the file in `public/downloads/` and add an entry to `src/content/downloads.ts`. Size and SHA-256 checksum are computed from the real file at build time and shown on the Resources page.
 
+**Adding a long-form guide (pillar page with sticky ToC + PDF):** add a `LongGuide` entry to `src/content/guides.ts`, then create a route folder `src/app/resources/<slug>/page.tsx` that renders `<LongFormGuide guide={...} />` (see `resources/cmmc-checklist`). The CMMC checklist PDF is generated from the same content by `scripts/generate_cmmc_pdf.py` (`python3 scripts/generate_cmmc_pdf.py`, needs `reportlab`) — `guides.ts` is the source of truth; re-run the script if the content changes.
+
 ## Before launch (TODOs)
 
 - **Stats** in `src/content/home.ts` are placeholders — replace with real operational metrics.

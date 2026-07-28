@@ -3,6 +3,7 @@ import { site } from "@/content/site";
 import { services } from "@/content/services";
 import { industries } from "@/content/industries";
 import { articles } from "@/content/articles";
+import { longGuides } from "@/content/guides";
 
 // Public, indexable pages only. API routes, previews, and internal pages
 // are intentionally excluded.
@@ -49,5 +50,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...servicePages, ...industryPages, ...articlePages];
+  // Long-form pillar guides (e.g. the CMMC checklist) live at /resources/<slug>.
+  const guidePages = longGuides.map((guide) => ({
+    url: `${site.url}/resources/${guide.slug}`,
+    lastModified: new Date(guide.dateModified),
+    priority: 0.7,
+  }));
+
+  return [
+    ...staticPages,
+    ...servicePages,
+    ...industryPages,
+    ...articlePages,
+    ...guidePages,
+  ];
 }

@@ -6,7 +6,7 @@ export type DownloadItem = {
   file: string; // filename inside public/downloads
   title: string;
   description: string;
-  category: "Hardening" | "Incident Response" | "Template";
+  category: "Hardening" | "Incident Response" | "Template" | "Checklist";
   format: string;
   requires: string;
   version: string;
@@ -14,6 +14,17 @@ export type DownloadItem = {
 };
 
 export const downloads: DownloadItem[] = [
+  {
+    file: "OneCircle-CMMC-Readiness-Checklist.pdf",
+    title: "CMMC Compliance Checklist",
+    description:
+      "A CMMC 2.0 readiness checklist for defense contractors: the levels, how to scope FCI/CUI, and a family-by-family walkthrough of the NIST SP 800-171 controls behind Level 2. The PDF companion to our online checklist.",
+    category: "Checklist",
+    format: "PDF",
+    requires: "Any PDF reader",
+    version: "1.0.0",
+    updated: "2026-07-20",
+  },
   {
     file: "OneCircle-Win11-Hardening.ps1",
     title: "Windows 11 Hardening Script",

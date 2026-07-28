@@ -9,6 +9,7 @@ const categoryStyles: Record<string, string> = {
   Hardening: "bg-brand-50 text-brand-700",
   "Incident Response": "bg-amber-50 text-amber-700",
   Template: "bg-sky-50 text-sky-700",
+  Checklist: "bg-emerald-50 text-emerald-700",
 };
 
 const formatIcons: Record<string, IconName> = {

@@ -1,6 +1,9 @@
+import Link from "next/link";
 import { articles } from "@/content/articles";
+import { cmmcChecklist } from "@/content/guides";
 import { breadcrumbSchema, JsonLd, pageMetadata } from "@/lib/seo";
 import { Container, PageHero } from "@/components/ui/primitives";
+import { Icon } from "@/components/ui/icons";
 import { ArticleGrid } from "@/components/sections/article-grid";
 import { CtaSection } from "@/components/sections/cta";
 
@@ -29,6 +32,34 @@ export default function ChecklistsPage() {
       />
       <section className="bg-white py-20 sm:py-24">
         <Container>
+          {/* Featured long-form checklist */}
+          <Link
+            href={`/resources/${cmmcChecklist.slug}`}
+            className="group mb-10 flex flex-col gap-6 rounded-xl border border-slate-200 bg-gradient-to-br from-brand-50 to-white p-8 transition-colors hover:border-brand-500 sm:flex-row sm:items-center"
+          >
+            <span className="inline-flex w-fit rounded-lg bg-gradient-to-br from-brand-500 to-brand-purple p-3">
+              <Icon name="shield" className="h-6 w-6 text-white" />
+            </span>
+            <div className="flex-1">
+              <span className="text-xs font-semibold uppercase tracking-wide text-brand-700">
+                Featured · full guide + PDF
+              </span>
+              <h2 className="mt-1 text-xl font-semibold text-slate-900">
+                {cmmcChecklist.title}
+              </h2>
+              <p className="mt-1.5 text-sm leading-relaxed text-slate-600">
+                {cmmcChecklist.description}
+              </p>
+            </div>
+            <span className="inline-flex items-center gap-1.5 whitespace-nowrap text-sm font-semibold text-brand-700">
+              Open the checklist
+              <Icon
+                name="arrow-right"
+                className="h-4 w-4 transition-transform group-hover:translate-x-1"
+              />
+            </span>
+          </Link>
+
           <ArticleGrid items={items} />
         </Container>
       </section>
