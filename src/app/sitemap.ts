@@ -4,6 +4,7 @@ import { services } from "@/content/services";
 import { industries } from "@/content/industries";
 import { articles } from "@/content/articles";
 import { longGuides } from "@/content/guides";
+import { jobs } from "@/content/careers";
 
 // Public, indexable pages only. API routes, previews, and internal pages
 // are intentionally excluded.
@@ -23,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/resources/guides", priority: 0.6 },
     { path: "/resources/checklists", priority: 0.6 },
     { path: "/resources/blog", priority: 0.6 },
+    { path: "/careers", priority: 0.5 },
     { path: "/contact", priority: 0.8 },
     { path: "/legal/privacy", priority: 0.3 },
     { path: "/legal/terms", priority: 0.3 },
@@ -57,11 +59,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const jobPages = jobs.map((job) => ({
+    url: `${site.url}/careers/${job.slug}`,
+    lastModified: new Date(job.datePosted),
+    priority: 0.5,
+  }));
+
   return [
     ...staticPages,
     ...servicePages,
     ...industryPages,
     ...articlePages,
     ...guidePages,
+    ...jobPages,
   ];
 }

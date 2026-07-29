@@ -43,6 +43,7 @@ export const footerNav = {
     { label: "Trust & Compliance", href: "/trust" },
     { label: "Industries", href: "/industries" },
     { label: "Resources", href: "/resources" },
+    { label: "Careers", href: "/careers" },
     { label: "Contact", href: "/contact" },
   ],
   legal: [

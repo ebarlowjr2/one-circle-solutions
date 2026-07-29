@@ -95,3 +95,54 @@ export function articleSchema({
     },
   };
 }
+
+export function jobPostingSchema({
+  title,
+  description,
+  path,
+  datePosted,
+  employmentType,
+  salary,
+}: {
+  title: string;
+  description: string;
+  path: string;
+  datePosted: string;
+  employmentType: string;
+  salary?: { value: number; unit: string };
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    title,
+    description,
+    datePosted,
+    employmentType,
+    url: `${site.url}${path}`,
+    directApply: false,
+    hiringOrganization: {
+      "@type": "Organization",
+      name: site.name,
+      sameAs: site.url,
+      logo: `${site.url}/logo.png`,
+    },
+    jobLocationType: "TELECOMMUTE",
+    applicantLocationRequirements: {
+      "@type": "Country",
+      name: "USA",
+    },
+    ...(salary
+      ? {
+          baseSalary: {
+            "@type": "MonetaryAmount",
+            currency: "USD",
+            value: {
+              "@type": "QuantitativeValue",
+              value: salary.value,
+              unitText: salary.unit,
+            },
+          },
+        }
+      : {}),
+  };
+}
