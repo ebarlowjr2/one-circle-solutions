@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { applyMailto, getJob, jobs } from "@/content/careers";
+import { getJob, jobs } from "@/content/careers";
 import {
   breadcrumbSchema,
   JsonLd,
@@ -52,7 +52,7 @@ export default async function JobPage({
   if (!job) notFound();
 
   const path = `/careers/${job.slug}`;
-  const mailto = applyMailto(job);
+  const applyHref = `${path}/apply`;
 
   const facts = [
     ["Employment", job.employmentLabel],
@@ -95,7 +95,7 @@ export default async function JobPage({
             </p>
             <div className="mt-8">
               <a
-                href={mailto}
+                href={applyHref}
                 className="inline-flex items-center justify-center gap-2 rounded-md bg-brand-500 px-5 py-3 text-sm font-semibold text-slate-950 transition-colors hover:bg-brand-400"
               >
                 Apply for this role
@@ -124,7 +124,7 @@ export default async function JobPage({
                   ))}
                 </dl>
                 <a
-                  href={mailto}
+                  href={applyHref}
                   className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-md bg-brand-500 px-4 py-2.5 text-sm font-semibold text-slate-950 transition-colors hover:bg-brand-400"
                 >
                   Apply for this role
@@ -173,12 +173,12 @@ export default async function JobPage({
                   How to apply
                 </h2>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                  Email your résumé with a short note about why you&apos;re a
+                  Upload your résumé and a short note about why you&apos;re a
                   fit. We read every application and reply to candidates we&apos;d
                   like to talk with.
                 </p>
                 <a
-                  href={mailto}
+                  href={applyHref}
                   className="mt-4 inline-flex items-center gap-2 rounded-md bg-brand-500 px-5 py-2.5 text-sm font-semibold text-slate-950 transition-colors hover:bg-brand-400"
                 >
                   Apply for this role
