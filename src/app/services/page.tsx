@@ -5,9 +5,9 @@ import { EngagementModel } from "@/components/sections/engagement";
 import { CtaSection } from "@/components/sections/cta";
 
 export const metadata = pageMetadata({
-  title: "Cybersecurity Services",
+  title: "Managed Security & Cybersecurity Services",
   description:
-    "Managed detection and response, managed SIEM and security monitoring, vulnerability management, cloud security, incident response, vCISO leadership, and compliance support — delivered as one operation.",
+    "Explore managed detection and response, managed SIEM, vulnerability management, cloud security, incident response, vCISO, and compliance services — delivered as one operation.",
   path: "/services",
 });
 

@@ -6,6 +6,10 @@ export type Service = {
   shortName: string;
   icon: IconName;
   tagline: string;
+  // SEO overrides (fall back to name/tagline). Titles omit the brand — the
+  // root layout template appends "| One Circle Solutions".
+  seoTitle?: string;
+  seoDescription?: string;
   summary: string;
   outcomes: string[];
   capabilities: { title: string; description: string }[];
@@ -16,6 +20,9 @@ export type Service = {
 export const services: Service[] = [
   {
     slug: "managed-detection-response",
+    seoTitle: "Managed Detection and Response Services",
+    seoDescription:
+      "Get 24/7 managed detection and response across endpoint, identity, cloud, and network activity with analyst-led triage and pre-approved containment.",
     name: "Managed Detection & Response",
     shortName: "MDR",
     icon: "radar",
@@ -63,6 +70,9 @@ export const services: Service[] = [
   },
   {
     slug: "managed-siem",
+    seoTitle: "Managed SIEM Services & Log Management",
+    seoDescription:
+      "Design, tune, and operate your SIEM with managed log onboarding, detection engineering, alert triage, reporting, and continuous optimization.",
     name: "Managed SIEM & Log Management",
     shortName: "Managed SIEM",
     icon: "layers",
@@ -110,6 +120,9 @@ export const services: Service[] = [
   },
   {
     slug: "vulnerability-management",
+    seoTitle: "Vulnerability Management Services",
+    seoDescription:
+      "Identify, prioritize, and reduce exploitable risk with continuous vulnerability scanning, asset visibility, remediation guidance, and executive reporting.",
     name: "Vulnerability Management",
     shortName: "Vulnerability Mgmt",
     icon: "scan",
@@ -157,6 +170,9 @@ export const services: Service[] = [
   },
   {
     slug: "cloud-security",
+    seoTitle: "Cloud Security Services for AWS, Azure & GCP",
+    seoDescription:
+      "Improve cloud posture and threat detection across AWS, Azure, and Google Cloud with continuous monitoring, configuration review, and incident support.",
     name: "Cloud Security",
     shortName: "Cloud Security",
     icon: "cloud",
@@ -204,6 +220,9 @@ export const services: Service[] = [
   },
   {
     slug: "incident-response",
+    seoTitle: "Incident Response and Readiness Services",
+    seoDescription:
+      "Prepare for and respond to cybersecurity incidents with tested playbooks, tabletop exercises, rapid investigation, containment, and recovery guidance.",
     name: "Incident Response & Readiness",
     shortName: "Incident Response",
     icon: "siren",
@@ -251,6 +270,9 @@ export const services: Service[] = [
   },
   {
     slug: "vciso",
+    seoTitle: "Virtual CISO and vCISO Services",
+    seoDescription:
+      "Build a measurable security program with virtual CISO leadership, risk governance, executive reporting, roadmaps, and customer-assurance support.",
     name: "vCISO Services",
     shortName: "vCISO",
     icon: "compass",
@@ -298,6 +320,9 @@ export const services: Service[] = [
   },
   {
     slug: "compliance",
+    seoTitle: "Cybersecurity Compliance & Audit Readiness",
+    seoDescription:
+      "Prepare for SOC 2, HIPAA, PCI DSS, CMMC, ISO 27001, and NIST requirements with gap assessments, policies, evidence, and audit support.",
     name: "Compliance & Audit Readiness",
     shortName: "Compliance",
     icon: "shield",

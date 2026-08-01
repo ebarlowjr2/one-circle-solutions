@@ -26,8 +26,8 @@ export async function generateMetadata({
   const service = getService(slug);
   if (!service) return {};
   return pageMetadata({
-    title: service.name,
-    description: service.tagline,
+    title: service.seoTitle ?? service.name,
+    description: service.seoDescription ?? service.tagline,
     path: `/services/${service.slug}`,
   });
 }

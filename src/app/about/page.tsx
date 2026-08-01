@@ -9,10 +9,11 @@ import {
 import { CtaSection } from "@/components/sections/cta";
 
 export const metadata = pageMetadata({
-  title: "About Us",
+  title: "About One Circle Solutions | MSSP Security Operators",
   description:
-    "One Circle Solutions is a managed security services provider built by operators — senior analysts and engineers who run security as a craft, not a call center.",
+    "Meet the experienced security operators behind One Circle Solutions and learn how we deliver transparent, practical managed security services.",
   path: "/about",
+  absoluteTitle: true,
 });
 
 const values = [

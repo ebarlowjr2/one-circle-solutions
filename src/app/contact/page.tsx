@@ -8,9 +8,9 @@ import {
 import { ContactForm } from "@/components/contact-form";
 
 export const metadata = pageMetadata({
-  title: "Contact One Circle Solutions",
+  title: "Contact One Circle Solutions | Security Consultation",
   description:
-    "Book a security consultation with One Circle Solutions. Every conversation ends with a written findings brief — no obligation.",
+    "Schedule a security consultation with One Circle Solutions and receive a practical review of your current coverage, exposure, and priorities.",
   path: "/contact",
   absoluteTitle: true,
 });

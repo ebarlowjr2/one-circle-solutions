@@ -27,8 +27,10 @@ export async function generateMetadata({
   const industry = getIndustry(slug);
   if (!industry) return {};
   return pageMetadata({
-    title: `${industry.name} Cybersecurity Services`,
-    description: `${industry.description.split(". ")[0]}. Managed security, monitoring, and compliance support from One Circle Solutions.`,
+    title: industry.seoTitle ?? `${industry.name} Cybersecurity Services`,
+    description:
+      industry.seoDescription ??
+      `${industry.description.split(". ")[0]}. Managed security, monitoring, and compliance support from One Circle Solutions.`,
     path: `/industries/${industry.slug}`,
   });
 }

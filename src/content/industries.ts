@@ -4,6 +4,10 @@ export type Industry = {
   // Singular, grammatical form for sentences like "helps <descriptor> teams"
   // and "your <descriptor> organization" (name alone reads wrong for plurals).
   descriptor: string;
+  // SEO overrides (fall back to a generated title/description). Titles omit
+  // the brand — the root layout template appends "| One Circle Solutions".
+  seoTitle?: string;
+  seoDescription?: string;
   headline: string;
   description: string;
   risks: string[];
@@ -15,6 +19,8 @@ export type Industry = {
 export const industries: Industry[] = [
   {
     slug: "healthcare",
+    seoDescription:
+      "Protect healthcare identities, endpoints, cloud systems, and regulated data with managed security operations and HIPAA-aligned security support.",
     name: "Healthcare",
     descriptor: "healthcare",
     headline: "Cybersecurity for healthcare organizations",
@@ -44,6 +50,9 @@ export const industries: Industry[] = [
   },
   {
     slug: "financial-services",
+    seoTitle: "Financial Services Cybersecurity",
+    seoDescription:
+      "Strengthen monitoring, incident response, vulnerability management, and audit readiness for financial services and insurance organizations.",
     name: "Financial Services & Insurance",
     descriptor: "financial services",
     headline: "Cybersecurity for financial services and insurance firms",
@@ -73,6 +82,8 @@ export const industries: Industry[] = [
   },
   {
     slug: "manufacturing",
+    seoDescription:
+      "Protect manufacturing users, endpoints, cloud systems, and operational continuity with managed cybersecurity monitoring and response.",
     name: "Manufacturing",
     descriptor: "manufacturing",
     headline: "Cybersecurity for manufacturers",
@@ -102,6 +113,9 @@ export const industries: Industry[] = [
   },
   {
     slug: "nonprofits",
+    seoTitle: "Nonprofit Cybersecurity Services",
+    seoDescription:
+      "Protect donor data, staff identities, cloud applications, and operations with practical managed cybersecurity services for nonprofit organizations.",
     name: "Nonprofits",
     descriptor: "nonprofit",
     headline: "Cybersecurity for nonprofit organizations",
@@ -131,6 +145,9 @@ export const industries: Industry[] = [
   },
   {
     slug: "government-contractors",
+    seoTitle: "CMMC Cybersecurity for Government Contractors",
+    seoDescription:
+      "Support CMMC and NIST 800-171 readiness with monitoring, vulnerability management, documentation, evidence collection, and security leadership.",
     name: "Government Contractors",
     descriptor: "government-contractor",
     headline: "Cybersecurity for government contractors",
@@ -160,6 +177,8 @@ export const industries: Industry[] = [
   },
   {
     slug: "small-business",
+    seoDescription:
+      "Protect a small business without a security team — managed detection and response, cloud security, and compliance support at a size and price that fits.",
     name: "Small Business",
     descriptor: "small-business",
     headline: "Cybersecurity for small businesses",
@@ -190,6 +209,9 @@ export const industries: Industry[] = [
   },
   {
     slug: "startups",
+    seoTitle: "Startup Cybersecurity Services",
+    seoDescription:
+      "Clear SOC 2 and security reviews, put guardrails on your cloud, and get security leadership — practical cybersecurity for fast-growing startups.",
     name: "Startups",
     descriptor: "startup",
     headline: "Cybersecurity for startups",
