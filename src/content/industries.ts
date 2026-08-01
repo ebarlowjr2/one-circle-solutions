@@ -1,6 +1,9 @@
 export type Industry = {
   slug: string;
   name: string;
+  // Singular, grammatical form for sentences like "helps <descriptor> teams"
+  // and "your <descriptor> organization" (name alone reads wrong for plurals).
+  descriptor: string;
   headline: string;
   description: string;
   risks: string[];
@@ -13,6 +16,7 @@ export const industries: Industry[] = [
   {
     slug: "healthcare",
     name: "Healthcare",
+    descriptor: "healthcare",
     headline: "Cybersecurity for healthcare organizations",
     description:
       "Clinics, practices, and healthcare technology companies hold some of the most targeted data there is — and run it on a mix of EHR platforms, connected devices, and legacy systems that were never designed to face the modern internet. We provide the monitoring, response, and HIPAA-aligned program support that keeps patient care running.",
@@ -41,6 +45,7 @@ export const industries: Industry[] = [
   {
     slug: "financial-services",
     name: "Financial Services & Insurance",
+    descriptor: "financial services",
     headline: "Cybersecurity for financial services and insurance firms",
     description:
       "Advisory firms, lenders, and insurance organizations face attackers who follow the money and regulators who follow the attackers. We deliver the monitoring, vulnerability management, and audit-ready program support that examiners and carriers increasingly expect to see.",
@@ -69,6 +74,7 @@ export const industries: Industry[] = [
   {
     slug: "manufacturing",
     name: "Manufacturing",
+    descriptor: "manufacturing",
     headline: "Cybersecurity for manufacturers",
     description:
       "Manufacturers are now a top ransomware target precisely because downtime is so expensive — and because plant-floor systems, ERP, and supply-chain connections create an attack surface most IT tools never see. We help manufacturers get visibility across IT and OT boundaries and keep production running.",
@@ -97,6 +103,7 @@ export const industries: Industry[] = [
   {
     slug: "nonprofits",
     name: "Nonprofits",
+    descriptor: "nonprofit",
     headline: "Cybersecurity for nonprofit organizations",
     description:
       "Nonprofits hold donor data, financial records, and sometimes sensitive client information — with lean teams and budgets that attackers know all about. We right-size enterprise-grade security operations so mission-driven organizations get real coverage without enterprise overhead.",
@@ -125,6 +132,7 @@ export const industries: Industry[] = [
   {
     slug: "government-contractors",
     name: "Government Contractors",
+    descriptor: "government-contractor",
     headline: "Cybersecurity for government contractors",
     description:
       "If you sell into federal or defense supply chains, security requirements are now contract requirements. We help contractors implement and evidence the controls behind CMMC and NIST SP 800-171 — and run the monitoring those frameworks assume you have.",
@@ -153,6 +161,7 @@ export const industries: Industry[] = [
   {
     slug: "small-business",
     name: "Small Business",
+    descriptor: "small-business",
     headline: "Cybersecurity for small businesses",
     description:
       "Attackers target small businesses precisely because they assume no one is watching — no security team, stretched IT, and tools nobody has time to tune. We bring enterprise-grade monitoring and response at a size and price that fits a smaller company, so you get real coverage without standing up a security department.",
@@ -182,6 +191,7 @@ export const industries: Industry[] = [
   {
     slug: "startups",
     name: "Startups",
+    descriptor: "startup",
     headline: "Cybersecurity for startups",
     description:
       "Startups move fast and run cloud-native — then hit a wall the first time an enterprise customer sends a security questionnaire or an investor asks about your controls. We help you clear SOC 2 and diligence, put guardrails on your cloud, and get a named security leader in the room, usually well before you can justify a full-time security hire.",

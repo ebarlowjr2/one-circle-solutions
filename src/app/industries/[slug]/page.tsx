@@ -115,7 +115,7 @@ export default async function IndustryPage({
         <Container>
           <SectionHeading
             eyebrow="Where to start"
-            title={`How One Circle Solutions helps ${industry.name.toLowerCase()} teams`}
+            title={`How One Circle Solutions helps ${industry.descriptor} teams`}
           />
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {industry.services.map(({ slug: serviceSlug, reason }) => {
@@ -168,7 +168,7 @@ export default async function IndustryPage({
       </section>
 
       <CtaSection
-        title={`Talk to us about securing your ${industry.name.toLowerCase()} organization`}
+        title={`Talk to us about securing your ${industry.descriptor} organization`}
         description="A 30-minute conversation, a look at your current coverage and obligations, and a written findings brief — no obligation either way."
       />
     </>

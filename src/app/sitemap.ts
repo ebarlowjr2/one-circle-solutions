@@ -9,7 +9,10 @@ import { jobs } from "@/content/careers";
 // Public, indexable pages only. API routes, previews, and internal pages
 // are intentionally excluded.
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
+  // Stable review date for pages without their own modification date. Bump
+  // this when marketing/service/industry content is materially revised —
+  // don't let it move on every build (that sends false freshness signals).
+  const lastModified = new Date("2026-07-28");
 
   const staticPages = [
     { path: "", priority: 1.0 },

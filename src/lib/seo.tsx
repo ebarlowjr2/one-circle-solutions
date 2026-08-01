@@ -43,13 +43,29 @@ export function JsonLd({ data }: { data: object }) {
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": `${site.url}/#organization`,
   name: site.name,
   legalName: site.legalName,
   url: site.url,
-  logo: `${site.url}/logo.png`,
+  logo: { "@type": "ImageObject", url: `${site.url}/logo.png` },
   description: site.description,
   email: site.email,
   telephone: site.phone,
+  areaServed: { "@type": "Country", name: "United States" },
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      contactType: "sales",
+      email: site.email,
+      telephone: site.phone,
+      areaServed: "US",
+      availableLanguage: ["en"],
+    },
+  ],
+  // TODO: confirm the exact LinkedIn (and any other) profile URLs, then add
+  // them here so search engines can tie the entity together. Only add
+  // profiles One Circle Solutions actually controls.
+  sameAs: [] as string[],
 };
 
 export function breadcrumbSchema(items: { name: string; path: string }[]) {
