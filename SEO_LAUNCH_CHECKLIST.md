@@ -34,7 +34,7 @@ Production base URL: `https://www.onecs.net` (single source of truth: `src/conte
 - [ ] Bing Webmaster Tools: verify + submit sitemap
 - [ ] Check Search Console coverage report for unexpected 404s from old Squarespace URLs; add redirects for any missed paths
 - [ ] Confirm Vercel Analytics is receiving traffic
-- [ ] (Optional) Add GA4 via `@next/third-parties` and update `/legal/privacy` to disclose it
+- [ ] Enable Google Analytics 4: create a GA4 property, copy its Measurement ID (`G-XXXXXXXXXX`), add it as the `NEXT_PUBLIC_GA_ID` environment variable in Vercel (Production + Preview), and redeploy. GA is already wired in `src/app/layout.tsx` and disclosed in `/legal/privacy` — it only loads once this variable is set. Verify in GA4 Realtime or by viewing page source for `gtag/js?id=G-…`.
 - [ ] Re-run Lighthouse on the production domain
 - [ ] Set a calendar reminder to review rankings/coverage at 30 days
 

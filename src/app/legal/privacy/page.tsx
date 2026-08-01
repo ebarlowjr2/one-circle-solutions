@@ -22,13 +22,14 @@ const sections = [
     heading: "Analytics",
     body: [
       "We use privacy-focused, aggregate web analytics (Vercel Web Analytics and Speed Insights) to understand page performance and traffic patterns. These tools do not use advertising cookies and do not build cross-site profiles of visitors.",
-      "If we add additional analytics tools in the future (such as Google Analytics), we will update this policy before doing so.",
+      "Where enabled, we also use Google Analytics 4 (GA4) to measure aggregate site usage — pages viewed, general traffic sources, and device categories. GA4 sets first-party cookies and processes data on Google's infrastructure under Google's terms. We do not use it for advertising or remarketing. You can opt out of Google Analytics using Google's browser add-on or your browser's cookie controls.",
     ],
   },
   {
     heading: "Cookies and tracking",
     body: [
-      "This website does not use advertising or cross-site tracking cookies. Any cookies present are limited to what our hosting and analytics infrastructure strictly requires to function.",
+      "This website does not use advertising or cross-site tracking cookies. Any cookies present are limited to what our hosting and analytics infrastructure requires to function, plus the first-party analytics cookies set by Google Analytics 4 where it is enabled.",
+      "You can block or delete cookies through your browser settings; the site will continue to work without them.",
     ],
   },
   {

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist_Mono, Poppins } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { site } from "@/content/site";
 import { Header } from "@/components/layout/header";
@@ -46,6 +47,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gaId = process.env.NEXT_PUBLIC_GA_ID;
   return (
     <html
       lang="en"
@@ -65,8 +67,10 @@ export default function RootLayout({
         <Footer />
         <Analytics />
         <SpeedInsights />
-        {/* TODO before launch, if desired: add GA4 via @next/third-parties
-            (<GoogleAnalytics gaId="G-XXXXXXX" />) and update /legal/privacy. */}
+        {/* Google Analytics 4 — only loads when NEXT_PUBLIC_GA_ID is set
+            (add it as an env var in Vercel). Keeps the ID out of the repo
+            and lets you enable/disable GA without a code change. */}
+        {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
       </body>
     </html>
   );
