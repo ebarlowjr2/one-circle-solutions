@@ -150,6 +150,64 @@ export const industries: Industry[] = [
       "Contract eligibility protected instead of at risk",
     ],
   },
+  {
+    slug: "small-business",
+    name: "Small Business",
+    headline: "Cybersecurity for small businesses",
+    description:
+      "Attackers target small businesses precisely because they assume no one is watching — no security team, stretched IT, and tools nobody has time to tune. We bring enterprise-grade monitoring and response at a size and price that fits a smaller company, so you get real coverage without standing up a security department.",
+    risks: [
+      "Phishing and business email compromise aimed at owners, finance, and admin staff",
+      "Ransomware that can stop a small company's operations cold",
+      "Security tools bought but never monitored — alerts pile up unseen",
+      "Reused passwords and no MFA across email and key applications",
+      "One overworked IT person, or nobody, covering security on the side",
+    ],
+    complianceConcerns: [
+      "Cyber insurance requirements — MFA, EDR, monitoring, and an incident response plan",
+      "Security questionnaires from the larger customers you want to win",
+      "PCI DSS if you take card payments, plus state data-breach laws",
+    ],
+    services: [
+      { slug: "managed-detection-response", reason: "Someone watching around the clock, so your small team (or solo IT) doesn't have to." },
+      { slug: "cloud-security", reason: "Hardening for the Microsoft 365 or Google Workspace stack most small businesses run on." },
+      { slug: "compliance", reason: "Straight answers to customer security questionnaires and cyber-insurance requirements." },
+    ],
+    outcomes: [
+      "Enterprise-grade coverage at a small-business-realistic cost",
+      "The security answers customers and insurers keep asking for",
+      "Fewer after-hours surprises, and a plan for when something does happen",
+    ],
+  },
+  {
+    slug: "startups",
+    name: "Startups",
+    headline: "Cybersecurity for startups",
+    description:
+      "Startups move fast and run cloud-native — then hit a wall the first time an enterprise customer sends a security questionnaire or an investor asks about your controls. We help you clear SOC 2 and diligence, put guardrails on your cloud, and get a named security leader in the room, usually well before you can justify a full-time security hire.",
+    risks: [
+      "SOC 2 or a customer security review blocking an enterprise deal",
+      "Cloud misconfigurations from shipping fast on AWS, Azure, or GCP",
+      "Secrets and access sprawl as the team and infrastructure grow",
+      "No clear owner for security while everyone wears every hat",
+      "Investor and customer diligence you're not ready to answer",
+    ],
+    complianceConcerns: [
+      "SOC 2 Type I and Type II readiness",
+      "Customer security questionnaires and vendor reviews",
+      "ISO 27001 and investor or M&A due diligence",
+    ],
+    services: [
+      { slug: "compliance", reason: "SOC 2 readiness with evidence built into how you already work — not a fire drill before the audit." },
+      { slug: "vciso", reason: "A named security leader for customers, investors, and your board, without a full-time hire." },
+      { slug: "cloud-security", reason: "Guardrails on your cloud that cut risk without slowing down shipping." },
+    ],
+    outcomes: [
+      "A SOC 2 result that unblocks enterprise deals",
+      "Security answers ready for customers and investors",
+      "Cloud guardrails your engineers can actually live with",
+    ],
+  },
 ];
 
 export function getIndustry(slug: string): Industry | undefined {

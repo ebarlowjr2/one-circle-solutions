@@ -8,7 +8,7 @@ import { CtaSection } from "@/components/sections/cta";
 export const metadata = pageMetadata({
   title: "Industries We Serve",
   description:
-    "Managed security services tailored to healthcare, financial services, manufacturing, nonprofits, and government contractors — matched to each industry's risks and compliance obligations.",
+    "Managed security services for healthcare, financial services, manufacturing, nonprofits, government contractors, small businesses, and startups — matched to each industry's and stage's risks and compliance obligations.",
   path: "/industries",
 });
 
@@ -23,8 +23,8 @@ export default function IndustriesPage() {
       />
       <PageHero
         eyebrow="Industries"
-        title="Security that speaks your industry's language"
-        description="Every industry carries its own attackers, regulators, and constraints. We tailor the same core operation — detection, response, vulnerability management, and compliance support — to the risks that actually apply to you."
+        title="Security that fits your industry — and your stage"
+        description="Every industry, and every stage of growth, carries its own attackers, obligations, and constraints. We tailor the same core operation — detection, response, vulnerability management, and compliance support — to the risks that actually apply to you, whether you're a two-person startup or a regulated enterprise."
       />
 
       <section className="bg-white py-20 sm:py-24">
@@ -53,9 +53,10 @@ export default function IndustriesPage() {
             ))}
           </div>
           <p className="mt-10 text-sm text-slate-600">
-            Don&apos;t see your industry? The operating model adapts —{" "}
+            Don&apos;t see an exact match? We serve businesses of every size and
+            sector — the operating model adapts.{" "}
             <Link href="/contact" className="font-semibold text-brand-700 hover:text-brand-500">
-              tell us about your environment
+              Tell us about your environment
             </Link>{" "}
             or browse{" "}
             <Link href="/services" className="font-semibold text-brand-700 hover:text-brand-500">
