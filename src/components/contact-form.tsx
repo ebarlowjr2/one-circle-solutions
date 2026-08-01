@@ -2,16 +2,24 @@
 
 import { useState, type FormEvent } from "react";
 
+// Plain-language options so buyers who don't know the acronyms can still
+// self-select. The two umbrella categories (MSSP / MSP) come first for
+// people who know the category but not the specific service; "Not sure yet"
+// is the default so it's always okay not to know.
 const interests = [
-  "Managed Detection & Response",
-  "Managed SIEM",
-  "Vulnerability Management",
-  "Cloud Security",
-  "Incident Response & Readiness",
-  "vCISO / Security Leadership",
-  "Compliance & Audit Readiness",
-  "Not sure yet",
+  "Managed security services (MSSP)",
+  "Managed IT services (MSP)",
+  "24/7 monitoring & threat response (MDR)",
+  "Security monitoring & log management (SIEM)",
+  "Vulnerability management",
+  "Cloud security",
+  "Incident response — active or recent",
+  "Compliance & audit readiness (SOC 2, HIPAA, CMMC)",
+  "Security leadership (vCISO)",
+  "Not sure yet — help me figure it out",
 ];
+
+const defaultInterest = "Not sure yet — help me figure it out";
 
 const inputStyles =
   "w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-brand-500 focus:outline-none";
@@ -78,9 +86,9 @@ export function ContactForm() {
         </div>
         <div>
           <label htmlFor="interest" className="mb-1.5 block text-sm font-medium text-slate-700">
-            What&apos;s on your mind?
+            What can we help with?
           </label>
-          <select id="interest" name="interest" className={inputStyles} defaultValue="Not sure yet">
+          <select id="interest" name="interest" className={inputStyles} defaultValue={defaultInterest}>
             {interests.map((item) => (
               <option key={item} value={item}>
                 {item}
