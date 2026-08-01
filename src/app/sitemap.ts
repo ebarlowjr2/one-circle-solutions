@@ -24,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/resources/guides", priority: 0.6 },
     { path: "/resources/checklists", priority: 0.6 },
     { path: "/resources/blog", priority: 0.6 },
+    { path: "/pathway-to-protection", priority: 0.8 },
     { path: "/careers", priority: 0.5 },
     { path: "/contact", priority: 0.8 },
     { path: "/legal/privacy", priority: 0.3 },
