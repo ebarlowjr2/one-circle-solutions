@@ -71,7 +71,7 @@ export default function PathwayToProtectionPage() {
                 </p>
               ))}
               <div className="mt-8 flex flex-wrap gap-4">
-                <ButtonLink href="/contact" variant="light">
+                <ButtonLink href="/pathway-to-protection/start" variant="light">
                   Get protected
                 </ButtonLink>
                 <ButtonLink href="#whats-included" variant="outlineDark">
@@ -98,7 +98,7 @@ export default function PathwayToProtectionPage() {
                 ))}
               </ul>
               <div className="mt-7">
-                <ButtonLink href="/contact" variant="light" className="w-full">
+                <ButtonLink href="/pathway-to-protection/start" variant="light" className="w-full">
                   Start today
                 </ButtonLink>
               </div>
@@ -210,7 +210,7 @@ export default function PathwayToProtectionPage() {
               Includes setup, deployment, and a 30-day monitoring report.
             </p>
             <div className="mt-7 flex flex-wrap justify-center gap-4">
-              <ButtonLink href="/contact">Get on the Pathway</ButtonLink>
+              <ButtonLink href="/pathway-to-protection/start">Get on the Pathway</ButtonLink>
               <a
                 href={`mailto:${site.email}?subject=${encodeURIComponent("Pathway to Protection")}`}
                 className="inline-flex items-center justify-center gap-2 rounded-md border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-800 transition-colors hover:border-slate-500 hover:bg-slate-50"
@@ -225,6 +225,8 @@ export default function PathwayToProtectionPage() {
       <CtaSection
         title="Get your business on the Pathway to Protection"
         description="Tell us how many systems you're protecting and we'll get you set up. Setup, deployment, and your first 30-day monitoring report are included."
+        primaryHref="/pathway-to-protection/start"
+        primaryLabel="Get on the Pathway"
       />
     </>
   );
