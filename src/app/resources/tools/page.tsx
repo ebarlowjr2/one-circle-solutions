@@ -3,11 +3,12 @@ import { breadcrumbSchema, JsonLd, pageMetadata } from "@/lib/seo";
 import { Container, PageHero } from "@/components/ui/primitives";
 import { DownloadsSection } from "@/components/sections/downloads";
 import { CtaSection } from "@/components/sections/cta";
+import { downloads } from "@/content/downloads";
 
 export const metadata = pageMetadata({
   title: "Scripts & Tools",
   description:
-    "Free security scripts, hardening baselines, and templates from One Circle Solutions — Windows and Linux hardening scripts and an incident response plan template, each published with a SHA-256 checksum.",
+    "Free security scripts and hardening baselines from One Circle Solutions — each published with a SHA-256 checksum.",
   path: "/resources/tools",
 });
 
@@ -27,7 +28,10 @@ export default function ToolsPage() {
         description="The same baselines and templates we use in engagements, free to download and use. Every file lists its SHA-256 checksum — verify before you run, exactly as you'd expect a security firm to tell you."
       />
 
-      <DownloadsSection showHeading={false} />
+      <DownloadsSection
+        showHeading={false}
+        items={downloads.filter((download) => download.category !== "Template")}
+      />
 
       <section className="border-t border-slate-200 bg-white pb-16">
         <Container className="pt-8">

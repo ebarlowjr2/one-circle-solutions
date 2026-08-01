@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 import { readFileSync, statSync } from "node:fs";
 import path from "node:path";
-import { downloads } from "@/content/downloads";
+import { downloads, type DownloadItem } from "@/content/downloads";
 import { Icon, type IconName } from "@/components/ui/icons";
 import { Container, SectionHeading } from "@/components/ui/primitives";
 
@@ -33,8 +33,10 @@ function fileMeta(file: string) {
 // listing can never drift from what's actually served.
 export function DownloadsSection({
   showHeading = true,
+  items = downloads,
 }: {
   showHeading?: boolean;
+  items?: DownloadItem[];
 }) {
   return (
     <section className="bg-white py-16 sm:py-20">
@@ -47,7 +49,7 @@ export function DownloadsSection({
           />
         ) : null}
         <div className={`grid gap-6 lg:grid-cols-3 ${showHeading ? "mt-12" : ""}`}>
-          {downloads.map((item) => {
+          {items.map((item) => {
             const meta = fileMeta(item.file);
             return (
               <article

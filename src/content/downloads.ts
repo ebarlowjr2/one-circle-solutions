@@ -52,7 +52,7 @@ export const downloads: DownloadItem[] = [
     title: "Incident Response Plan Template",
     description:
       "A fill-in-the-blanks IR plan: severity matrix, roles and 24/7 contacts, phase-by-phase checklists, a notification obligations table to complete with counsel, communication templates, and a blameless post-incident review agenda.",
-    category: "Incident Response",
+    category: "Template",
     format: "Markdown",
     requires: "A quiet hour and your leadership team",
     version: "1.0.0",
