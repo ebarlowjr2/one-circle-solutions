@@ -48,7 +48,7 @@ export const resourceCategories: ResourceCategory[] = [
   },
   {
     slug: "checklists",
-    label: "Checklists & Templates",
+    label: "Checklist and Templates",
     icon: "check",
     description:
       "Actionable checklists and ready-to-use templates for evaluating risk, planning incident response, and getting audit-ready without overbuying.",
