@@ -10,7 +10,7 @@ import { DownloadsSection } from "@/components/sections/downloads";
 import { downloads } from "@/content/downloads";
 
 export const metadata = pageMetadata({
-  title: "Checklist and Templates",
+  title: "Checklist & Templates",
   description:
     "Actionable cybersecurity checklists and templates from One Circle Solutions — evaluate risk, plan incident response, and get audit-ready without overbuying.",
   path: "/resources/checklists",
@@ -24,11 +24,11 @@ export default function ChecklistsPage() {
         data={breadcrumbSchema([
           { name: "Home", path: "/" },
           { name: "Resources", path: "/resources" },
-          { name: "Checklist and Templates", path: "/resources/checklists" },
+          { name: "Checklist & Templates", path: "/resources/checklists" },
         ])}
       />
       <PageHero
-        eyebrow="Resources · Checklist and Templates"
+        eyebrow="Resources · Checklist & Templates"
         title="Checklists and templates you can act on today"
         description="The questions to ask, the boxes to check, and ready-to-use templates — distilled from work we do with clients every week."
       />
@@ -67,7 +67,11 @@ export default function ChecklistsPage() {
       </section>
       <DownloadsSection
         showHeading={false}
-        items={downloads.filter((download) => download.category === "Template")}
+        items={downloads.filter(
+          (download) =>
+            download.category === "Template" ||
+            download.category === "Checklist",
+        )}
       />
       <CtaSection
         title="Prefer we run the checklist with you?"

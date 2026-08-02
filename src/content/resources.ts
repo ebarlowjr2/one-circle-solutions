@@ -23,7 +23,11 @@ const countByType = (type: string) =>
   articles.filter((a) => a.category === type).length +
   longGuides.filter((g) => g.category === type).length;
 
-const templates = downloads.filter((download) => download.category === "Template");
+// Downloads that live on the Checklist & Templates page rather than Tools.
+const checklistDownloads = downloads.filter(
+  (download) =>
+    download.category === "Template" || download.category === "Checklist",
+);
 
 // The four cards on the Resources hub. Counts are derived from content so
 // they can never drift from what's actually published.
@@ -33,8 +37,8 @@ export const resourceCategories: ResourceCategory[] = [
     label: "Scripts & Tools",
     icon: "scan",
     description:
-      "Free hardening scripts, secure baselines, and templates you can download and run today — each published with a SHA-256 checksum.",
-    count: downloads.length - templates.length,
+      "Free hardening scripts and secure baselines you can download and run today — each published with a SHA-256 checksum.",
+    count: downloads.length - checklistDownloads.length,
     countNoun: "downloads",
   },
   {
@@ -48,11 +52,11 @@ export const resourceCategories: ResourceCategory[] = [
   },
   {
     slug: "checklists",
-    label: "Checklist and Templates",
+    label: "Checklist & Templates",
     icon: "check",
     description:
       "Actionable checklists and ready-to-use templates for evaluating risk, planning incident response, and getting audit-ready without overbuying.",
-    count: countByType("Checklist") + templates.length,
+    count: countByType("Checklist") + checklistDownloads.length,
     countNoun: "resources",
   },
   {

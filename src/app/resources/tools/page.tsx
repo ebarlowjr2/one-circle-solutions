@@ -30,7 +30,11 @@ export default function ToolsPage() {
 
       <DownloadsSection
         showHeading={false}
-        items={downloads.filter((download) => download.category !== "Template")}
+        items={downloads.filter(
+          (download) =>
+            download.category !== "Template" &&
+            download.category !== "Checklist",
+        )}
       />
 
       <section className="border-t border-slate-200 bg-white pb-16">
