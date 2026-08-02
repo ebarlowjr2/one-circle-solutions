@@ -6,11 +6,13 @@ import { Container, PageHero } from "@/components/ui/primitives";
 import { Icon } from "@/components/ui/icons";
 import { ArticleGrid } from "@/components/sections/article-grid";
 import { CtaSection } from "@/components/sections/cta";
+import { DownloadsSection } from "@/components/sections/downloads";
+import { downloads } from "@/content/downloads";
 
 export const metadata = pageMetadata({
-  title: "Security Checklists",
+  title: "Checklist and Templates",
   description:
-    "Actionable cybersecurity checklists from One Circle Solutions — evaluating an MSSP, meeting cyber-insurance requirements, and getting audit-ready without overbuying.",
+    "Actionable cybersecurity checklists and templates from One Circle Solutions — evaluate risk, plan incident response, and get audit-ready without overbuying.",
   path: "/resources/checklists",
 });
 
@@ -22,13 +24,13 @@ export default function ChecklistsPage() {
         data={breadcrumbSchema([
           { name: "Home", path: "/" },
           { name: "Resources", path: "/resources" },
-          { name: "Checklists", path: "/resources/checklists" },
+          { name: "Checklist and Templates", path: "/resources/checklists" },
         ])}
       />
       <PageHero
-        eyebrow="Resources · Checklists"
-        title="Checklists you can act on today"
-        description="The questions to ask, the boxes to check, and the order to do it in — distilled from work we do with clients every week."
+        eyebrow="Resources · Checklist and Templates"
+        title="Checklists and templates you can act on today"
+        description="The questions to ask, the boxes to check, and ready-to-use templates — distilled from work we do with clients every week."
       />
       <section className="bg-white py-20 sm:py-24">
         <Container>
@@ -63,6 +65,10 @@ export default function ChecklistsPage() {
           <ArticleGrid items={items} />
         </Container>
       </section>
+      <DownloadsSection
+        showHeading={false}
+        items={downloads.filter((download) => download.category === "Template")}
+      />
       <CtaSection
         title="Prefer we run the checklist with you?"
         description="Book a consultation and we'll assess your current state against the same criteria — and leave you with a written findings brief."

@@ -23,6 +23,8 @@ const countByType = (type: string) =>
   articles.filter((a) => a.category === type).length +
   longGuides.filter((g) => g.category === type).length;
 
+const templates = downloads.filter((download) => download.category === "Template");
+
 // The four cards on the Resources hub. Counts are derived from content so
 // they can never drift from what's actually published.
 export const resourceCategories: ResourceCategory[] = [
@@ -32,7 +34,7 @@ export const resourceCategories: ResourceCategory[] = [
     icon: "scan",
     description:
       "Free hardening scripts, secure baselines, and templates you can download and run today — each published with a SHA-256 checksum.",
-    count: downloads.length,
+    count: downloads.length - templates.length,
     countNoun: "downloads",
   },
   {
@@ -46,12 +48,12 @@ export const resourceCategories: ResourceCategory[] = [
   },
   {
     slug: "checklists",
-    label: "Checklists",
+    label: "Checklist and Templates",
     icon: "check",
     description:
-      "Actionable checklists for evaluating an MSSP, meeting cyber-insurance requirements, and getting audit-ready without overbuying.",
-    count: countByType("Checklist"),
-    countNoun: "checklists",
+      "Actionable checklists and ready-to-use templates for evaluating risk, planning incident response, and getting audit-ready without overbuying.",
+    count: countByType("Checklist") + templates.length,
+    countNoun: "resources",
   },
   {
     slug: "blog",
