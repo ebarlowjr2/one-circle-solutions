@@ -174,8 +174,8 @@ export default async function JobPage({
                 </h2>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">
                   Upload your résumé and a short note about why you&apos;re a
-                  fit. We read every application and reply to candidates we&apos;d
-                  like to talk with.
+                  good fit. We read every application and reply to candidates
+                  we&apos;d like to talk with.
                 </p>
                 <a
                   href={applyHref}
