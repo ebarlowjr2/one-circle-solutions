@@ -129,19 +129,18 @@ export const adminAssistant: Job = {
 export const softwareDeveloperNet: Job = {
   slug: "software-developer-net",
   title: "Software Developer (.NET / ASP.NET Full Stack)",
-  partner: "3 Squared Technology Group",
   employmentType: "FULL_TIME",
   employmentLabel: "Full-time",
-  locationLabel: "On-site · United States (government contract)",
-  workplace: "On-site",
-  remote: false,
+  locationLabel: "100% Remote (United States)",
+  workplace: "Remote",
+  remote: true,
   datePosted: "2026-07-28",
   summary:
-    "3 Squared Technology Group is seeking a motivated Junior to Mid-Level Software Developer with experience in .NET, ASP.NET, and full-stack development to support mission-critical applications for government customers. An active Secret clearance and a current CompTIA Security+ certification are required.",
+    "One Circle Solutions is seeking a motivated Junior to Mid-Level Software Developer with experience in .NET, ASP.NET, and full-stack development to support mission-critical applications for government customers. An active Secret clearance and a current CompTIA Security+ certification are required.",
   facts: [
     { label: "Employment", value: "Full-time" },
     { label: "Level", value: "Junior to Mid-Level" },
-    { label: "Company", value: "3 Squared Technology Group" },
+    { label: "Location", value: "100% Remote (United States)" },
     { label: "Position type", value: "Government contract support" },
     { label: "Clearance", value: "Active Secret — required" },
     { label: "Certification", value: "CompTIA Security+ — required" },
@@ -151,7 +150,7 @@ export const softwareDeveloperNet: Job = {
     {
       heading: "About the role",
       paragraphs: [
-        "3 Squared Technology Group is seeking a motivated Junior to Mid-Level Software Developer with experience in .NET, ASP.NET, and full-stack application development. You'll support the development, enhancement, integration, testing, and maintenance of mission-critical applications and information systems supporting government customers.",
+        "One Circle Solutions is seeking a motivated Junior to Mid-Level Software Developer with experience in .NET, ASP.NET, and full-stack application development. You'll support the development, enhancement, integration, testing, and maintenance of mission-critical applications and information systems supporting government customers.",
         "The ideal candidate has a solid foundation in software development and is comfortable across both front-end and back-end technologies. This position suits a developer who can work independently on assigned tasks while collaborating with senior developers, system administrators, cybersecurity personnel, database administrators, and government stakeholders.",
         "Candidates must possess an active Secret security clearance and a current CompTIA Security+ certification at the time of hire.",
       ],
