@@ -12,16 +12,24 @@ export type JobSection = {
 export type Job = {
   slug: string;
   title: string;
+  // Set for roles posted on behalf of a partner company (used for display
+  // and as the hiring organization in JobPosting structured data).
+  partner?: string;
   employmentType: "PART_TIME" | "FULL_TIME" | "CONTRACTOR";
   employmentLabel: string;
   locationLabel: string;
   workplace: string;
-  compensationLabel: string;
+  // Remote controls the JobPosting location type; defaults to workplace check.
+  remote?: boolean;
+  compensationLabel?: string;
   salary?: { value: number; unit: "HOUR" | "YEAR" };
-  reportsTo: string;
-  flsa: string;
+  reportsTo?: string;
+  flsa?: string;
   datePosted: string; // YYYY-MM-DD
   summary: string;
+  // Optional explicit "At a glance" rows; otherwise derived from the fields
+  // above. Provide this for roles whose facts don't map to the defaults.
+  facts?: { label: string; value: string }[];
   sections: JobSection[];
 };
 
@@ -118,7 +126,113 @@ export const adminAssistant: Job = {
   ],
 };
 
-export const jobs: Job[] = [adminAssistant];
+export const softwareDeveloperNet: Job = {
+  slug: "software-developer-net",
+  title: "Software Developer (.NET / ASP.NET Full Stack)",
+  partner: "3 Squared Technology Group",
+  employmentType: "FULL_TIME",
+  employmentLabel: "Full-time",
+  locationLabel: "On-site · United States (government contract)",
+  workplace: "On-site",
+  remote: false,
+  datePosted: "2026-07-28",
+  summary:
+    "3 Squared Technology Group is seeking a motivated Junior to Mid-Level Software Developer with experience in .NET, ASP.NET, and full-stack development to support mission-critical applications for government customers. An active Secret clearance and a current CompTIA Security+ certification are required.",
+  facts: [
+    { label: "Employment", value: "Full-time" },
+    { label: "Level", value: "Junior to Mid-Level" },
+    { label: "Company", value: "3 Squared Technology Group" },
+    { label: "Position type", value: "Government contract support" },
+    { label: "Clearance", value: "Active Secret — required" },
+    { label: "Certification", value: "CompTIA Security+ — required" },
+    { label: "Citizenship", value: "U.S. citizenship required" },
+  ],
+  sections: [
+    {
+      heading: "About the role",
+      paragraphs: [
+        "3 Squared Technology Group is seeking a motivated Junior to Mid-Level Software Developer with experience in .NET, ASP.NET, and full-stack application development. You'll support the development, enhancement, integration, testing, and maintenance of mission-critical applications and information systems supporting government customers.",
+        "The ideal candidate has a solid foundation in software development and is comfortable across both front-end and back-end technologies. This position suits a developer who can work independently on assigned tasks while collaborating with senior developers, system administrators, cybersecurity personnel, database administrators, and government stakeholders.",
+        "Candidates must possess an active Secret security clearance and a current CompTIA Security+ certification at the time of hire.",
+      ],
+    },
+    {
+      heading: "Key responsibilities",
+      items: [
+        "Design, develop, test, troubleshoot, and maintain applications using C#, .NET, .NET Core, and ASP.NET technologies.",
+        "Develop and maintain web applications using ASP.NET MVC, Web API, Razor, HTML, CSS, JavaScript, and related technologies.",
+        "Develop and maintain backend application logic, APIs, services, and database integrations.",
+        "Support full-stack development across presentation, business logic, and data layers.",
+        "Create, modify, and optimize SQL queries, stored procedures, and database interactions in Microsoft SQL Server.",
+        "Troubleshoot application defects and perform root-cause analysis.",
+        "Support modernization and enhancement of existing and legacy applications.",
+        "Participate in testing, debugging, code reviews, configuration management, and deployment.",
+        "Develop and maintain technical documentation for applications, software changes, interfaces, and configurations.",
+        "Work within established Agile/Scrum and/or DevSecOps development processes.",
+        "Use source-control and development tools such as Git, Azure DevOps, and Visual Studio.",
+        "Collaborate with cybersecurity personnel to meet DoD security requirements and secure-coding practices.",
+        "Assist with vulnerability remediation, STIG findings, and security-related software updates.",
+        "Participate in requirements discussions with technical and functional stakeholders, and support production applications.",
+      ],
+    },
+    {
+      heading: "Mandatory qualifications",
+      intro: "Candidates must meet all of the following requirements:",
+      items: [
+        "Active DoD Secret security clearance.",
+        "Current CompTIA Security+ certification.",
+        "U.S. citizenship.",
+        "Bachelor's degree in Computer Science, Software Engineering, Information Technology, Information Systems, or a related technical discipline; equivalent relevant experience may be considered if permitted by contract requirements.",
+        "Approximately 1–5 years of professional software development experience.",
+        "Experience developing applications using C# and .NET / .NET Core.",
+        "Experience with ASP.NET, ASP.NET MVC, and/or ASP.NET Web API.",
+        "Working knowledge of front-end technologies such as HTML, CSS, JavaScript, Bootstrap, or similar frameworks.",
+        "Experience with Microsoft SQL Server or a comparable relational database.",
+        "Understanding of object-oriented programming principles and software development best practices.",
+        "Familiarity with RESTful APIs and application integration.",
+        "Experience using source-control tools such as Git.",
+        "Strong troubleshooting, analytical, and problem-solving skills, and the ability to communicate with technical and non-technical team members.",
+      ],
+    },
+    {
+      heading: "Preferred qualifications",
+      items: [
+        "Experience supporting Department of Defense, U.S. Air Force, or other federal government systems.",
+        "Experience modernizing or maintaining legacy .NET applications.",
+        "Experience with Azure DevOps, CI/CD pipelines, DevSecOps, or automated deployment.",
+        "Experience with JavaScript frameworks such as Angular or React.",
+        "Experience developing or integrating REST APIs and web services.",
+        "Familiarity with application security, vulnerability remediation, and secure-coding standards.",
+        "Experience in Agile/Scrum development environments.",
+        "Familiarity with DoD RMF, STIGs, and cybersecurity requirements.",
+      ],
+    },
+    {
+      heading: "Desired technical skills",
+      items: [
+        "Primary — C#, .NET, .NET Core, ASP.NET, ASP.NET MVC, Web API, SQL Server",
+        "Front end — HTML, CSS, JavaScript, Bootstrap, Razor, Angular / React",
+        "Development & DevOps — Visual Studio, Git, Azure DevOps, CI/CD, Agile / Scrum",
+        "Security — CompTIA Security+, DoD cybersecurity, RMF, STIG, secure coding, vulnerability remediation",
+      ],
+    },
+    {
+      heading: "Candidate profile",
+      paragraphs: [
+        "The successful candidate will be a technically capable developer eager to grow into increased responsibility while supporting applications in a structured DoD environment.",
+        "Junior candidates should demonstrate strong technical fundamentals and the ability to learn quickly. Mid-level candidates should be able to independently develop, troubleshoot, and deliver software components while assisting less-experienced team members as needed.",
+      ],
+    },
+    {
+      heading: "Clearance & certification are mandatory",
+      paragraphs: [
+        "An active Secret security clearance and a current CompTIA Security+ certification are mandatory for this position. Candidates who do not currently meet both requirements will not be considered.",
+      ],
+    },
+  ],
+};
+
+export const jobs: Job[] = [softwareDeveloperNet, adminAssistant];
 
 export function getJob(slug: string): Job | undefined {
   return jobs.find((j) => j.slug === slug);

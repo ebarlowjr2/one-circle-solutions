@@ -54,13 +54,15 @@ export default async function JobPage({
   const path = `/careers/${job.slug}`;
   const applyHref = `${path}/apply`;
 
-  const facts = [
-    ["Employment", job.employmentLabel],
-    ["Location", job.locationLabel],
-    ["Compensation", job.compensationLabel],
-    ["Reports to", job.reportsTo],
-    ["Classification", job.flsa],
-  ];
+  const facts: [string, string][] = job.facts
+    ? job.facts.map((f) => [f.label, f.value])
+    : ([
+        ["Employment", job.employmentLabel],
+        ["Location", job.locationLabel],
+        ["Compensation", job.compensationLabel],
+        ["Reports to", job.reportsTo],
+        ["Classification", job.flsa],
+      ].filter(([, v]) => v) as [string, string][]);
 
   return (
     <>
@@ -72,6 +74,8 @@ export default async function JobPage({
           datePosted: job.datePosted,
           employmentType: job.employmentType,
           salary: job.salary,
+          hiringOrganizationName: job.partner,
+          remote: job.remote ?? job.workplace === "Remote",
         })}
       />
       <JsonLd
@@ -86,10 +90,15 @@ export default async function JobPage({
       <header className="border-b border-slate-200 bg-gradient-to-b from-brand-50 to-white py-16 sm:py-20">
         <Container>
           <div className="max-w-3xl">
-            <Eyebrow>Careers · Open role</Eyebrow>
+            <Eyebrow>Careers · {job.partner ? "Partner role" : "Open role"}</Eyebrow>
             <h1 className="mt-3 text-4xl font-semibold tracking-tight text-balance text-slate-900 sm:text-5xl">
               {job.title}
             </h1>
+            {job.partner ? (
+              <p className="mt-3 text-base font-medium text-brand-700">
+                In partnership with {job.partner}
+              </p>
+            ) : null}
             <p className="mt-5 text-lg leading-relaxed text-slate-600">
               {job.summary}
             </p>
@@ -184,10 +193,11 @@ export default async function JobPage({
                   Apply for this role
                 </a>
                 <p className="mt-4 text-xs text-slate-500">
-                  One Circle Solutions is an equal-opportunity employer. All
-                  qualified applicants will receive consideration without regard
-                  to race, color, religion, sex, sexual orientation, gender
-                  identity, national origin, disability, or veteran status.
+                  {job.partner ?? "One Circle Solutions"} is an equal-opportunity
+                  employer. All qualified applicants will receive consideration
+                  without regard to race, color, religion, sex, sexual
+                  orientation, gender identity, national origin, disability, or
+                  veteran status.
                 </p>
               </div>
 

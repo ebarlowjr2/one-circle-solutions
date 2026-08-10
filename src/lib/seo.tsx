@@ -119,6 +119,8 @@ export function jobPostingSchema({
   datePosted,
   employmentType,
   salary,
+  hiringOrganizationName,
+  remote = true,
 }: {
   title: string;
   description: string;
@@ -126,7 +128,13 @@ export function jobPostingSchema({
   datePosted: string;
   employmentType: string;
   salary?: { value: number; unit: string };
+  // Defaults to One Circle Solutions; set for partner-posted roles so the
+  // hiring organization is represented accurately.
+  hiringOrganizationName?: string;
+  // Remote roles use TELECOMMUTE; on-site roles get a US jobLocation.
+  remote?: boolean;
 }) {
+  const isOwn = !hiringOrganizationName || hiringOrganizationName === site.name;
   return {
     "@context": "https://schema.org",
     "@type": "JobPosting",
@@ -136,17 +144,25 @@ export function jobPostingSchema({
     employmentType,
     url: `${site.url}${path}`,
     directApply: false,
-    hiringOrganization: {
-      "@type": "Organization",
-      name: site.name,
-      sameAs: site.url,
-      logo: `${site.url}/logo.png`,
-    },
-    jobLocationType: "TELECOMMUTE",
-    applicantLocationRequirements: {
-      "@type": "Country",
-      name: "USA",
-    },
+    hiringOrganization: isOwn
+      ? {
+          "@type": "Organization",
+          name: site.name,
+          sameAs: site.url,
+          logo: `${site.url}/logo.png`,
+        }
+      : { "@type": "Organization", name: hiringOrganizationName },
+    ...(remote
+      ? {
+          jobLocationType: "TELECOMMUTE",
+          applicantLocationRequirements: { "@type": "Country", name: "USA" },
+        }
+      : {
+          jobLocation: {
+            "@type": "Place",
+            address: { "@type": "PostalAddress", addressCountry: "US" },
+          },
+        }),
     ...(salary
       ? {
           baseSalary: {

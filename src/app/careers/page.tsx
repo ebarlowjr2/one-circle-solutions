@@ -44,10 +44,17 @@ export default function CareersPage() {
                   <h3 className="text-lg font-semibold text-slate-900">
                     {job.title}
                   </h3>
+                  {job.partner ? (
+                    <p className="mt-1 text-sm font-medium text-brand-700">
+                      In partnership with {job.partner}
+                    </p>
+                  ) : null}
                   <p className="mt-1.5 flex flex-wrap gap-x-4 gap-y-1 text-sm text-slate-500">
                     <span>{job.employmentLabel}</span>
                     <span>{job.locationLabel}</span>
-                    <span>{job.compensationLabel}</span>
+                    {job.compensationLabel ? (
+                      <span>{job.compensationLabel}</span>
+                    ) : null}
                   </p>
                 </div>
                 <span className="inline-flex items-center gap-1.5 whitespace-nowrap text-sm font-semibold text-brand-700">
