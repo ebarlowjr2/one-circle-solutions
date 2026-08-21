@@ -20,12 +20,12 @@ export function EngagementModel({
           {engagementModel.steps.map((step) => (
             <li key={step.step} className="relative">
               <div className="flex items-center gap-3">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand-500 to-brand-purple text-sm font-semibold text-white">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-semibold text-white">
                   {step.step}
                 </span>
                 <div>
                   <h3 className="font-semibold text-slate-900">{step.title}</h3>
-                  <p className="text-xs font-medium uppercase tracking-wide text-slate-400">
+                  <p className="text-xs font-medium uppercase tracking-wide text-slate-500">
                     {step.duration}
                   </p>
                 </div>

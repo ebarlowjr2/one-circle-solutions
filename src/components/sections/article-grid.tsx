@@ -19,7 +19,7 @@ export function ArticleGrid({ items }: { items: Article[] }) {
             >
               {item.category}
             </span>
-            <span className="text-xs text-slate-400">{item.readTime}</span>
+            <span className="text-xs text-slate-500">{item.readTime}</span>
           </div>
           <h2 className="mt-4 text-lg font-semibold leading-snug text-slate-900">
             {item.title}

@@ -3,7 +3,7 @@
 import { useState, type FormEvent, type ReactNode } from "react";
 
 const inputStyles =
-  "w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-brand-500 focus:outline-none";
+  "w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-500 focus:border-brand-500 focus:outline-none";
 
 function Field({ label, children }: { label: string; children: ReactNode }) {
   return (
@@ -84,7 +84,7 @@ export function ApplyForm({ position }: { position: string }) {
       </Field>
       <div>
         <label htmlFor="resume" className="mb-1.5 block text-sm font-medium text-slate-700">
-          Résumé <span className="text-slate-400">(PDF or Word, max 4 MB)</span>
+          Résumé <span className="text-slate-500">(PDF or Word, max 4 MB)</span>
         </label>
         <input
           id="resume"
@@ -107,7 +107,7 @@ export function ApplyForm({ position }: { position: string }) {
           {error || "Something went wrong. Please try again or email us directly."}
         </p>
       ) : null}
-      <p className="text-xs leading-relaxed text-slate-400">
+      <p className="text-xs leading-relaxed text-slate-500">
         We use what you share here only to evaluate your application. One Circle
         Solutions is an equal-opportunity employer.
       </p>

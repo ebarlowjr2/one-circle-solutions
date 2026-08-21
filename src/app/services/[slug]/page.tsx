@@ -73,7 +73,7 @@ export default async function ServicePage({
             </div>
             <div className="rounded-xl border border-slate-200 bg-white p-7 shadow-sm lg:self-start">
               <div className="flex items-center gap-3">
-                <span className="inline-flex rounded-lg bg-gradient-to-br from-brand-500 to-brand-purple p-2.5">
+                <span className="inline-flex rounded-lg bg-brand-600 p-2.5">
                   <Icon name={service.icon} className="h-6 w-6 text-white" />
                 </span>
                 <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-500">

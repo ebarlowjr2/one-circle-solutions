@@ -57,7 +57,7 @@ export function DownloadsSection({
                 className="flex flex-col rounded-xl border border-slate-200 bg-white p-7"
               >
                 <div className="flex items-center justify-between">
-                  <span className="inline-flex rounded-lg bg-gradient-to-br from-brand-500 to-brand-purple p-2.5">
+                  <span className="inline-flex rounded-lg bg-brand-600 p-2.5">
                     <Icon
                       name={formatIcons[item.format] ?? "layers"}
                       className="h-5 w-5 text-white"
@@ -103,7 +103,7 @@ export function DownloadsSection({
                 </dl>
 
                 <div className="mt-3 rounded-md bg-slate-50 px-3 py-2">
-                  <p className="text-[10px] font-semibold uppercase tracking-wide text-slate-400">
+                  <p className="text-[10px] font-semibold uppercase tracking-wide text-slate-500">
                     SHA-256
                   </p>
                   <code className="mt-0.5 block break-all font-mono text-[10px] leading-relaxed text-slate-500">

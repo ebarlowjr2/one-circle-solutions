@@ -121,7 +121,7 @@ export default function PathwayToProtectionPage() {
                 key={feature.title}
                 className="flex flex-col rounded-xl border border-slate-200 p-7"
               >
-                <span className="inline-flex w-fit rounded-lg bg-gradient-to-br from-brand-500 to-brand-purple p-2.5">
+                <span className="inline-flex w-fit rounded-lg bg-brand-600 p-2.5">
                   <Icon name={feature.icon} className="h-5.5 w-5.5 text-white" />
                 </span>
                 <h3 className="mt-5 text-base font-semibold text-slate-900">

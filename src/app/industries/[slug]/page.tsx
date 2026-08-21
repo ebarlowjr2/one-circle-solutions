@@ -129,7 +129,7 @@ export default async function IndustryPage({
                   href={`/services/${serviceSlug}`}
                   className="group flex flex-col rounded-xl border border-slate-200 bg-white p-7 transition-colors hover:border-brand-500"
                 >
-                  <span className="inline-flex w-fit rounded-lg bg-gradient-to-br from-brand-500 to-brand-purple p-2.5">
+                  <span className="inline-flex w-fit rounded-lg bg-brand-600 p-2.5">
                     <Icon name={service.icon} className="h-5 w-5 text-white" />
                   </span>
                   <h3 className="mt-4 font-semibold text-slate-900">

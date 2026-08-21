@@ -47,7 +47,7 @@ export function EcosystemStrip() {
           {ecosystem.map((name) => (
             <li
               key={name}
-              className="text-sm font-semibold tracking-wide text-slate-400"
+              className="text-sm font-semibold tracking-wide text-slate-500"
             >
               {name}
             </li>
@@ -101,12 +101,9 @@ export function OperatingModel() {
           tone="dark"
         />
         <div className="mt-14 grid gap-px overflow-hidden rounded-xl border border-white/20 bg-white/20 sm:grid-cols-2">
-          {operatingModel.pillars.map((pillar, i) => (
+          {operatingModel.pillars.map((pillar) => (
             <div key={pillar.title} className="bg-white/10 p-8 backdrop-blur-sm">
-              <span className="text-sm font-semibold text-white/70">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <h3 className="mt-3 text-lg font-semibold text-white">
+              <h3 className="text-lg font-semibold text-white">
                 {pillar.title}
               </h3>
               <p className="mt-2.5 text-sm leading-relaxed text-white/85">

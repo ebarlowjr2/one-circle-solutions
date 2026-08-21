@@ -84,7 +84,7 @@ export default function LeadershipPage() {
                 className="flex flex-col rounded-xl border border-slate-200 bg-white p-8"
               >
                 <div className="flex items-center gap-4">
-                  <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 to-brand-purple">
+                  <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-brand-600">
                     <Icon name={desk.icon} className="h-7 w-7 text-white" />
                   </span>
                   <div>
@@ -102,7 +102,7 @@ export default function LeadershipPage() {
                 </p>
 
                 <div className="mt-6 flex-1">
-                  <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-slate-400">
+                  <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-slate-500">
                     Accountable for
                   </h4>
                   <ul className="mt-3 space-y-2.5 text-sm">
@@ -142,7 +142,7 @@ export default function LeadershipPage() {
                 {certIssuers.map((issuer) => (
                   <li
                     key={issuer}
-                    className="text-sm font-semibold tracking-wide text-slate-400"
+                    className="text-sm font-semibold tracking-wide text-slate-500"
                   >
                     {issuer}
                   </li>

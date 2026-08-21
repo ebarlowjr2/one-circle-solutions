@@ -39,7 +39,7 @@ export default function ChecklistsPage() {
             href={`/resources/${cmmcChecklist.slug}`}
             className="group mb-10 flex flex-col gap-6 rounded-xl border border-slate-200 bg-gradient-to-br from-brand-50 to-white p-8 transition-colors hover:border-brand-500 sm:flex-row sm:items-center"
           >
-            <span className="inline-flex w-fit rounded-lg bg-gradient-to-br from-brand-500 to-brand-purple p-3">
+            <span className="inline-flex w-fit rounded-lg bg-brand-600 p-3">
               <Icon name="shield" className="h-6 w-6 text-white" />
             </span>
             <div className="flex-1">

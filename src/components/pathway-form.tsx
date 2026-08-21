@@ -3,7 +3,7 @@
 import { useState, type FormEvent } from "react";
 
 const inputStyles =
-  "w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-brand-500 focus:outline-none";
+  "w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-500 focus:border-brand-500 focus:outline-none";
 
 // Simpler intake for the Pathway to Protection offer. Clicking through from
 // the promo already signals intent, so there's no service selector — just
@@ -71,14 +71,14 @@ export function PathwayForm() {
         </div>
         <div>
           <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-slate-700">
-            Phone <span className="text-slate-400">(optional)</span>
+            Phone <span className="text-slate-500">(optional)</span>
           </label>
           <input id="phone" name="phone" type="tel" autoComplete="tel" className={inputStyles} />
         </div>
       </div>
       <div>
         <label htmlFor="systems" className="mb-1.5 block text-sm font-medium text-slate-700">
-          How many systems? <span className="text-slate-400">(approximate is fine)</span>
+          How many systems? <span className="text-slate-500">(approximate is fine)</span>
         </label>
         <input
           id="systems"
@@ -92,7 +92,7 @@ export function PathwayForm() {
       </div>
       <div>
         <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-slate-700">
-          Anything else? <span className="text-slate-400">(optional)</span>
+          Anything else? <span className="text-slate-500">(optional)</span>
         </label>
         <textarea
           id="message"
@@ -114,7 +114,7 @@ export function PathwayForm() {
           Something went wrong. Please try again or email us directly.
         </p>
       ) : null}
-      <p className="text-xs leading-relaxed text-slate-400">
+      <p className="text-xs leading-relaxed text-slate-500">
         We&apos;ll use what you share here only to set up your Pathway to
         Protection quote and follow up. No lists, no sequences.
       </p>

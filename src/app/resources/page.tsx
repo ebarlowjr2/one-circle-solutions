@@ -37,10 +37,10 @@ export default function ResourcesPage() {
                 className="group flex flex-col rounded-xl border border-slate-200 p-8 transition-colors hover:border-brand-500"
               >
                 <div className="flex items-center justify-between">
-                  <span className="inline-flex rounded-lg bg-gradient-to-br from-brand-500 to-brand-purple p-3">
+                  <span className="inline-flex rounded-lg bg-brand-600 p-3">
                     <Icon name={category.icon} className="h-6 w-6 text-white" />
                   </span>
-                  <span className="text-xs font-medium text-slate-400">
+                  <span className="text-xs font-medium text-slate-500">
                     {category.count} {category.countNoun}
                   </span>
                 </div>

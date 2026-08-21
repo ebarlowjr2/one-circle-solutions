@@ -29,3 +29,17 @@ body {
   color: var(--color-slate-900);
   font-family: var(--font-sans), system-ui, sans-serif;
 }
+
+/* Consistent, visible keyboard focus on any interactive element that
+   doesn't already define its own focus style (cards, nav/footer links,
+   inline links). Only appears for keyboard/AT users, never on mouse click. */
+:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
