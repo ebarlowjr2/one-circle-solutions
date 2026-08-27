@@ -28,6 +28,7 @@ export const nav = [
 
 export const footerNav = {
   services: [
+    { label: "Managed Security Services", href: "/managed-security-services" },
     { label: "Managed Detection & Response", href: "/services/managed-detection-response" },
     { label: "Managed SIEM & Security Monitoring", href: "/services/managed-siem" },
     { label: "Vulnerability Management", href: "/services/vulnerability-management" },
@@ -49,5 +50,6 @@ export const footerNav = {
   legal: [
     { label: "Privacy Policy", href: "/legal/privacy" },
     { label: "Terms of Use", href: "/legal/terms" },
+    { label: "Responsible Disclosure", href: "/trust/responsible-disclosure" },
   ],
 } as const;

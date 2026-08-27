@@ -6,9 +6,11 @@ const nextConfig: NextConfig = {
     // Squarespace site (onecs.net) plus retired internal paths.
     // statusCode 301 is used explicitly (Next's `permanent: true` emits 308).
     return [
-      // TODO: point at a dedicated /services/managed-security-services page
-      // if one is ever split out from the services index.
-      { source: "/mssp", destination: "/services", statusCode: 301 },
+      {
+        source: "/mssp",
+        destination: "/managed-security-services",
+        statusCode: 301,
+      },
       {
         source: "/managed-detection-and-response",
         destination: "/services/managed-detection-response",

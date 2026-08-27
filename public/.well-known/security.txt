@@ -1,0 +1,6 @@
+# One Circle Solutions — security contact and policy (RFC 9116)
+Contact: mailto:info@onecs.net
+Expires: 2027-08-21T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://www.onecs.net/.well-known/security.txt
+Policy: https://www.onecs.net/trust/responsible-disclosure

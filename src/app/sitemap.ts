@@ -16,12 +16,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticPages = [
     { path: "", priority: 1.0 },
+    { path: "/managed-security-services", priority: 0.9 },
     { path: "/services", priority: 0.9 },
     { path: "/industries", priority: 0.8 },
     { path: "/about", priority: 0.7 },
     { path: "/about/leadership", priority: 0.6 },
     { path: "/about/certifications", priority: 0.6 },
     { path: "/trust", priority: 0.8 },
+    { path: "/trust/responsible-disclosure", priority: 0.3 },
     { path: "/resources", priority: 0.8 },
     { path: "/resources/tools", priority: 0.7 },
     { path: "/resources/guides", priority: 0.6 },
