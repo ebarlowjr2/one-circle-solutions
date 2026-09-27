@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { detectSpam } from "@/lib/spam";
 
 // Job application intake. Receives the form + résumé (multipart), validates,
 // and forwards to the BLOX intake pipeline (n8n → OneDrive résumé + Zendesk
@@ -25,6 +26,20 @@ export async function POST(request: Request) {
 
   if (!name || !email || !note || !(resume instanceof File)) {
     return NextResponse.json({ error: "Missing required fields." }, { status: 400 });
+  }
+
+  // Silently drop spam before processing the file — respond ok so bots
+  // don't learn they were blocked.
+  const spam = detectSpam({
+    website: form.get("website"),
+    _ts: form.get("_ts"),
+    name,
+    email,
+    note,
+  });
+  if (spam) {
+    console.warn(`[apply] dropped spam submission: ${spam}`);
+    return NextResponse.json({ ok: true });
   }
   if (!/\.(pdf|docx?)$/i.test(resume.name)) {
     return NextResponse.json(

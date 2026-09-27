@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { detectSpam, stripGuardFields } from "@/lib/spam";
 
 // Pathway to Protection intake. Kept separate from the general contact
 // intake so promo leads can be routed on their own. Every submission is
@@ -24,8 +25,15 @@ export async function POST(request: Request) {
     );
   }
 
+  // Silently drop spam — respond ok so bots don't learn they were blocked.
+  const spam = detectSpam(body);
+  if (spam) {
+    console.warn(`[pathway] dropped spam submission: ${spam}`);
+    return NextResponse.json({ ok: true });
+  }
+
   const payload = {
-    ...body,
+    ...stripGuardFields(body),
     formType: "pathway-to-protection",
     offer: "Pathway to Protection",
     submittedAt: new Date().toISOString(),

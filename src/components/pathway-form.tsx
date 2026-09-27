@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { SpamGuardFields } from "@/components/spam-guard";
 
 const inputStyles =
   "w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-500 focus:border-brand-500 focus:outline-none";
@@ -48,6 +49,7 @@ export function PathwayForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+      <SpamGuardFields />
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-slate-700">

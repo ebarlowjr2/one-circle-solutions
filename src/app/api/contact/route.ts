@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { detectSpam, stripGuardFields } from "@/lib/spam";
 
 // Contact form intake. Forwards submissions to the BLOX intake pipeline
 // (n8n webhook -> Zendesk ticket + Telegram ping). Override the endpoint with
@@ -22,13 +23,20 @@ export async function POST(request: Request) {
     );
   }
 
+  // Silently drop spam — respond ok so bots don't learn they were blocked.
+  const spam = detectSpam(body);
+  if (spam) {
+    console.warn(`[contact] dropped spam submission: ${spam}`);
+    return NextResponse.json({ ok: true });
+  }
+
   // Hand the lead to the intake pipeline. If it fails, tell the visitor rather
   // than silently losing the submission.
   try {
     const res = await fetch(WEBHOOK, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
+      body: JSON.stringify(stripGuardFields(body)),
       signal: AbortSignal.timeout(10000),
     });
     if (!res.ok) throw new Error(`intake responded ${res.status}`);

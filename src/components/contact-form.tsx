@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { SpamGuardFields } from "@/components/spam-guard";
 
 // Plain-language options so buyers who don't know the acronyms can still
 // self-select. The two umbrella categories (MSSP / MSP) come first for
@@ -63,6 +64,7 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+      <SpamGuardFields />
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-slate-700">

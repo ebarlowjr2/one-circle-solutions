@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent, type ReactNode } from "react";
+import { SpamGuardFields } from "@/components/spam-guard";
 
 const inputStyles =
   "w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-500 focus:border-brand-500 focus:outline-none";
@@ -57,6 +58,7 @@ export function ApplyForm({ position }: { position: string }) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+      <SpamGuardFields />
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label="Name">
           <input name="name" required autoComplete="name" className={inputStyles} />
